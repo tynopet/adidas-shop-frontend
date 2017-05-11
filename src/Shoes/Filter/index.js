@@ -1,9 +1,10 @@
 import React from 'react';
+import { Row, Col } from 'react-flexboxgrid';
 import './Filter.css';
 
 export default () => (
-  <div className="row">
-    <div className="col-lg-12">
+  <Row>
+    <Col lg={12}>
       <section className="filter">
         <img src={require('./filter.png')} alt="filter" className="filter-icon" />
         <div className="filter-gender">
@@ -23,6 +24,6 @@ export default () => (
           </span>
         </div>
       </section>
-    </div>
-  </div>
+    </Col>
+  </Row>
 );

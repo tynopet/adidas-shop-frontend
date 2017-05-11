@@ -1,11 +1,14 @@
 import React from 'react';
+import { Grid } from 'react-flexboxgrid';
 import Filter from './Filter';
 import Collection from './Collection'
 import './Shoes.css';
 
 export default () => (
   <main>
-    <Filter />
-    <Collection />
+    <Grid fluid>
+      <Filter />
+      <Collection />
+    </Grid>
   </main>
 );
