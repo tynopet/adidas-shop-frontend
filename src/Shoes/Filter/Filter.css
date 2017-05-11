@@ -1,0 +1,48 @@
+.filter {
+  display: flex;
+  margin-top: 11px;
+  margin-left: 23px;
+  justify-content: flex-start;
+  font-family: AvenirNextBold;
+}
+
+.filter .filter-gender,
+.filter .filter-size {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter .filter-gender {
+  width: 182px;
+}
+
+.filter .filter-size {
+  margin-left: 72px;
+  width: 323px;
+}
+
+.filter .filter-icon {
+  background-color: #ebebeb;
+  padding: 11px 8px;
+  margin-right: 29px;
+}
+
+.filter .filter-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #d6d6d6;
+  cursor: pointer;
+}
+
+.filter .filter-btn:focus {
+  outline: none;
+}
+
+.filter .filter-size-title,
+.filter .filter-btn:hover,
+.filter .filter-btn.selected {
+  color: #4d42f8;
+}

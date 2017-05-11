@@ -4,6 +4,8 @@ import {
   Route
 } from 'react-router-dom';
 import Navigation from '../Navigation';
+import Shoes from '../Shoes';
+import Details from '../Details';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +14,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navigation />
+          <Route exact path="/" component={Shoes} />
+          <Route path="/item" component={Details} />
         </div>
       </Router>
     );
