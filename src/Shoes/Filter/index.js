@@ -5,7 +5,7 @@ export default () => (
   <div className="row">
     <div className="col-lg-12">
       <section className="filter">
-        <img src="/img/filter.png" alt="filter" className="filter-icon" />
+        <img src={require('./filter.png')} alt="filter" className="filter-icon" />
         <div className="filter-gender">
           <button type="button" className="filter-btn selected">MAN</button>
           <button type="button" className="filter-btn">WOMAN</button>

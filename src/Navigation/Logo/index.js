@@ -4,6 +4,6 @@ import './Logo.css';
 
 export default () => (
   <Link to="/" className="logo">
-    <img src="/img/logo.png" alt="logo" />
+    <img src={require('./logo.png')} alt="logo" />
   </Link>
 );
