@@ -1,0 +1,17 @@
+.shoe-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+  text-decoration: none;
+  border-top: 6px solid #f4f4f4;
+  border-left: 9px solid #f4f4f4;
+  border-right: 8px solid #f4f4f4;
+  border-bottom: 9px solid #f4f4f4;
+}
+
+.shoe-card .shoe-card-image {
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+}

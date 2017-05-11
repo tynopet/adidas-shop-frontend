@@ -1,0 +1,15 @@
+.price {
+  text-decoration: none;
+  font-size: 30px;
+  padding: 23px 107px 27px 106px;
+  cursor: pointer;
+  color: #fff;
+  background-image: linear-gradient(107deg, #0c09bf, #966dd8);
+  border-top: 8px solid #f4f4f4;
+}
+
+.price.no-sale {
+  color: #0d0d0d;
+  background-color: #fff;
+  background-image: none;
+}
