@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Col } from 'react-flexboxgrid';
+import { Col } from 'react-flexbox-grid';
 import Sale from './Sale';
 import Price from './Price';
 import './ShoeCard.css';

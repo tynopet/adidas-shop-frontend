@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'react-flexboxgrid';
+import { Grid } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Collection from './Collection'
 import './Shoes.css';

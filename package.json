@@ -6,7 +6,7 @@
     "prop-types": "^15.5.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-flexboxgrid": "^1.0.0",
+    "react-flexbox-grid": "^1.1.3",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
