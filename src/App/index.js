@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import Navigation from '../Navigation';
+import Sidebar from '../Sidebar';
 import Shoes from '../Shoes';
 import Details from '../Details';
 import './App.css';
@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navigation />
+          <Sidebar />
           <Route exact path="/" component={Shoes} />
           <Route path="/item" component={Details} />
         </div>
