@@ -3,20 +3,24 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import styled from 'styled-components';
 import Sidebar from '../Sidebar';
 import Shoes from '../Shoes';
 import Details from '../Details';
-import './App.css';
+
+const AppWrapper = styled.div`
+  display: flex;
+`;
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <AppWrapper>
           <Sidebar />
           <Route exact path="/" component={Shoes} />
           <Route path="/item" component={Details} />
-        </div>
+        </AppWrapper>
       </Router>
     );
   }
