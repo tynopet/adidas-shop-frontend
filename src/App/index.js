@@ -5,8 +5,8 @@ import {
 } from 'react-router-dom';
 import styled from 'styled-components';
 import Sidebar from '../Sidebar';
-import Shoes from '../Shoes';
-import Details from '../Details';
+import List from '../Products/List';
+import Show from '../Products/Show';
 
 const AppWrapper = styled.div`
   display: flex;
@@ -18,8 +18,8 @@ class App extends Component {
       <Router>
         <AppWrapper>
           <Sidebar />
-          <Route exact path="/" component={Shoes} />
-          <Route path="/item" component={Details} />
+          <Route exact path="/" component={List} />
+          <Route path="/item" component={Show} />
         </AppWrapper>
       </Router>
     );
