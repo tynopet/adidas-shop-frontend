@@ -8,14 +8,14 @@ const FilterWrapper = styled.section`
   justify-content: flex-start;
   font-family: AvenirNextBold;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: normal;
   margin-top: 11px;
   margin-left: 23px;
 `;
 
 const FilterImage = styled.img`
   background-color: #ebebeb;
-  margin-right: 29px;
+  margin-right: 30px;
   padding: 11px 8px;
 `;
 
@@ -24,9 +24,10 @@ const FilterButton = styled.button`
   border: none;
   font-family: AvenirNextBold;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: normal;
   color: ${props => props.selected ? '#4d42f8' : '#d6d6d6'};
   cursor: pointer;
+  padding: 0;
 
   &:focus {
     outline: none;
@@ -41,7 +42,7 @@ const GenderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 182px;
+  width: 180px;
 `;
 
 const SizeWrapper = styled.div`
@@ -49,11 +50,12 @@ const SizeWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-left: 72px;
-  width: 323px;
+  width: 324px;
 `;
 
 const SizeTitle = styled.span`
   color: #4d42f8;
+  margin-right: 18px;
 `;
 
 export default () => (
@@ -67,15 +69,13 @@ export default () => (
         </GenderWrapper>
         <SizeWrapper>
           <SizeTitle>SIZE</SizeTitle>
-          <span>
-            <FilterButton type="button" >36</FilterButton>
-            <FilterButton type="button" >37</FilterButton>
-            <FilterButton type="button" >38</FilterButton>
-            <FilterButton type="button" >39</FilterButton>
-            <FilterButton type="button" >40</FilterButton>
-            <FilterButton type="button" selected>41</FilterButton>
-            <FilterButton type="button" >42</FilterButton>
-          </span>
+          <FilterButton type="button" >36</FilterButton>
+          <FilterButton type="button" >37</FilterButton>
+          <FilterButton type="button" >38</FilterButton>
+          <FilterButton type="button" >39</FilterButton>
+          <FilterButton type="button" >40</FilterButton>
+          <FilterButton type="button" selected>41</FilterButton>
+          <FilterButton type="button" >42</FilterButton>
         </SizeWrapper>
       </FilterWrapper>
     </Col>

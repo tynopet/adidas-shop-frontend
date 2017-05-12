@@ -7,6 +7,7 @@ const SubmenuWrapper = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 21px;
 `;
 
 const SubmenuTitle = styled.span`
@@ -15,7 +16,7 @@ const SubmenuTitle = styled.span`
   font-family: AvenirNextBold;
   font-weight: bold;
   position: relative;
-  margin-bottom: 29px;
+  margin-bottom: 15px;
   text-decoration: none;
 
   &::before {

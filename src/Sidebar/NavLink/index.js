@@ -10,7 +10,6 @@ const NavLink = styled(({
   font-family: ${props => props.submenu ? 'AndaleMono' : 'AvenirNextBold'};
   font-weight: ${props => props.submenu ? 'normal' : 'bold'};
   margin-bottom: ${props => props.submenu ? '30px;' : '29px'};
-  margin-top: ${props => props.submenu ? '32px' : '0px'};
   text-decoration: none;
 `;
 
