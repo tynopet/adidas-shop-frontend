@@ -1,4 +1,6 @@
-.sale {
+import styled from 'styled-components';
+
+const Label = styled.span`
   position: absolute;
   font-size: 14px;
   padding: 6px 20px;
@@ -7,8 +9,6 @@
   background-color: #ff5c5c;
   top: 7px;
   right: 7px;
-}
+`;
 
-.sale.no-sale {
-  display: none;
-}
+export default Label;

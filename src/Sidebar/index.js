@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 import SubmenuWrapper from './SubmenuWrapper';
 
 const Sidebar = styled.aside`
-  width: 414px;
+  min-width: 414px;
   background-color: #0e0e0e;
   min-height: 100vh;
   display: flex;
