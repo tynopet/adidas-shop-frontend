@@ -25,7 +25,7 @@ const FilterButton = styled.button`
   font-family: AvenirNextBold;
   font-size: 24px;
   font-weight: normal;
-  color: ${props => props.selected ? '#4d42f8' : '#d6d6d6'};
+  color: ${props => (props.selected ? '#4d42f8' : '#d6d6d6')};
   cursor: pointer;
   padding: 0;
 
@@ -69,13 +69,13 @@ export default () => (
         </GenderWrapper>
         <SizeWrapper>
           <SizeTitle>SIZE</SizeTitle>
-          <FilterButton type="button" >36</FilterButton>
-          <FilterButton type="button" >37</FilterButton>
-          <FilterButton type="button" >38</FilterButton>
-          <FilterButton type="button" >39</FilterButton>
-          <FilterButton type="button" >40</FilterButton>
+          <FilterButton type="button">36</FilterButton>
+          <FilterButton type="button">37</FilterButton>
+          <FilterButton type="button">38</FilterButton>
+          <FilterButton type="button">39</FilterButton>
+          <FilterButton type="button">40</FilterButton>
           <FilterButton type="button" selected>41</FilterButton>
-          <FilterButton type="button" >42</FilterButton>
+          <FilterButton type="button">42</FilterButton>
         </SizeWrapper>
       </FilterWrapper>
     </Col>
