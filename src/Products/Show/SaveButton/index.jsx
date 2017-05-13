@@ -14,6 +14,10 @@ const SaveButton = styled.button`
   top: 156px;
   height: 75px;
   width: 75px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default () => <SaveButton>SAVE</SaveButton>;

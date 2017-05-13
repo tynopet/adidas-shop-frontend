@@ -15,6 +15,10 @@ const BuyButton = styled.button`
   bottom: 0;
   left: 414px;
   width: calc(100% - 414px);
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default () => <BuyButton>BUY NOW</BuyButton>;
