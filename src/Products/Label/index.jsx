@@ -6,8 +6,9 @@ const Label = styled.span`
   padding: 6px 20px;
   color: #fff;
   font-weight: bold;
+  font-family: AvenirNextBold;
   background-color: #ff5c5c;
-  top: 7px;
+  top: ${props => (props.isShow ? '0' : '7px')};
   right: 7px;
 `;
 

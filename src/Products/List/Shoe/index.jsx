@@ -38,7 +38,7 @@ const Shoe = ({ imageLink, imageAlt, isSale, price }) => {
   const sale = isSale ? <Label>SALE</Label> : '';
   return (
     <Col lg={3}>
-      <ShoeLink to="/details">
+      <ShoeLink to="/item">
         <ShoeImage src={imageLink} alt={imageAlt} />
         {sale}
         <Price isSale={isSale}>${price}</Price>
