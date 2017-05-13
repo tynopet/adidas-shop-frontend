@@ -5,7 +5,7 @@ import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Label from './../../Label';
 
-const ShoeLink = styled(Link) `
+const ShoeLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -24,10 +24,10 @@ const ShoeImage = styled.img`
 `;
 
 const Price = styled.span`
-  background-image: ${props => props.isSale ? 'linear-gradient(107deg, #0c09bf, #966dd8)' : 'none'};
-  background-color: ${props => props.isSale ? 'none' : '#fff'};
+  background-image: ${props => (props.isSale ? 'linear-gradient(107deg, #0c09bf, #966dd8)' : 'none')};
+  background-color: ${props => (props.isSale ? 'none' : '#fff')};
   border-top: 8px solid #f4f4f4;
-  color: ${props => props.isSale ? '#fff' : '#0d0d0d'};
+  color: ${props => (props.isSale ? '#fff' : '#0d0d0d')};
   cursor: pointer;
   font-size: 30px;
   padding: 23px 107px 27px 106px;
@@ -44,14 +44,18 @@ const Shoe = ({ imageLink, imageAlt, isSale, price }) => {
         <Price isSale={isSale}>${price}</Price>
       </ShoeLink>
     </Col>
-  )
+  );
 };
 
-Shoe.PropTypes = {
+Shoe.propTypes = {
   imageLink: PropTypes.string.isRequired,
   imageAlt: PropTypes.string.isRequired,
-  sale: PropTypes.bool.isRequired,
+  isSale: PropTypes.bool,
   price: PropTypes.number.isRequired,
-}
+};
+
+Shoe.defaultProps = {
+  isSale: false,
+};
 
 export default Shoe;

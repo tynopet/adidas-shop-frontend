@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import dropdownIcon from './dropdown.svg';
 
-const SubmenuWrapper = styled.nav`
+const SubmenuContainer = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,11 +39,18 @@ const Submenu = styled.span`
   align-items: center;
 `;
 
-export default ({ children, title }) => (
-  <SubmenuWrapper>
+const SubmenuWrapper = ({ children, title }) => (
+  <SubmenuContainer>
     <SubmenuTitle>{title}</SubmenuTitle>
     <Submenu>
       {children}
     </Submenu>
-  </SubmenuWrapper>
+  </SubmenuContainer>
 );
+
+SubmenuWrapper.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default SubmenuWrapper;
