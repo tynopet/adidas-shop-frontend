@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Label from './../../Label';
 
@@ -34,18 +33,13 @@ const Price = styled.span`
   text-decoration: none;
 `;
 
-const Shoe = ({ imageLink, imageAlt, isSale, price }) => {
-  const sale = isSale ? <Label>SALE</Label> : '';
-  return (
-    <Col lg={3}>
-      <ShoeLink to="/item">
-        <ShoeImage src={imageLink} alt={imageAlt} />
-        {sale}
-        <Price isSale={isSale}>${price}</Price>
-      </ShoeLink>
-    </Col>
-  );
-};
+const Shoe = ({ imageLink, imageAlt, isSale, price }) => (
+  <ShoeLink to="/item">
+    <ShoeImage src={imageLink} alt={imageAlt} />
+    {isSale && <Label>SALE</Label>}
+    <Price isSale={isSale}>${price}</Price>
+  </ShoeLink>
+);
 
 Shoe.propTypes = {
   imageLink: PropTypes.string.isRequired,
