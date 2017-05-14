@@ -13,6 +13,7 @@ const FilterWrapper = styled.section`
   margin-bottom: 22px;
   padding-bottom: 11px;
   border-bottom: 3px solid #e7e7e7;
+  margin-left: 23px;
 `;
 
 const FilterImage = styled.img`
