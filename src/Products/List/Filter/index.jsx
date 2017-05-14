@@ -10,7 +10,9 @@ const FilterWrapper = styled.section`
   font-size: 24px;
   font-weight: normal;
   margin-top: 11px;
-  margin-left: 23px;
+  margin-bottom: 22px;
+  padding-bottom: 11px;
+  border-bottom: 3px solid #e7e7e7;
 `;
 
 const FilterImage = styled.img`

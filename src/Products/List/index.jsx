@@ -1,21 +1,37 @@
 import React from 'react';
-import { Grid, Row } from 'react-flexbox-grid';
-import styled from 'styled-components';
+import { Row, Col } from 'react-flexbox-grid';
 import Filter from './Filter';
 import Shoe from './Shoe';
-
-const Layout = styled.main`
-  width: 100%;
-`;
+import Layout from './../Layout';
 
 export default () => (
   <Layout>
-    <Grid fluid>
-      <Filter />
-      <Row>
+    <Filter />
+    <Row>
+      <Col lg={3}>
         <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} />
+      </Col>
+      <Col lg={3}>
         <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} />
-      </Row>
-    </Grid>
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} />
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} />
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} />
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} />
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} />
+      </Col>
+      <Col lg={3}>
+        <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} />
+      </Col>
+    </Row>
   </Layout>
 );
