@@ -29,12 +29,12 @@ export default () => (
     <Search />
     <NavWrapper>
       <SubmenuWrapper title="SPORTS">
-        <NavLink to="/" submenu selected>SHOES</NavLink>
-        <NavLink to="/" submenu>CLOTHING</NavLink>
-        <NavLink to="/" submenu>ACCESORIES</NavLink>
+        <NavLink exact to="/" submenu>SHOES</NavLink>
+        <NavLink to="/clothing" submenu>CLOTHING</NavLink>
+        <NavLink to="/accesories" submenu>ACCESORIES</NavLink>
       </SubmenuWrapper>
-      <NavLink to="/">BRANDS</NavLink>
-      <NavLink to="/">MICOACH</NavLink>
+      <NavLink to="/brands">BRANDS</NavLink>
+      <NavLink to="/MICOACH">MICOACH</NavLink>
     </NavWrapper>
   </Sidebar>
 );
