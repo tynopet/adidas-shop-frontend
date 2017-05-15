@@ -34,7 +34,7 @@ export default () => (
         <NavLink to="/accesories" submenu>ACCESORIES</NavLink>
       </SubmenuWrapper>
       <NavLink to="/brands">BRANDS</NavLink>
-      <NavLink to="/MICOACH">MICOACH</NavLink>
+      <NavLink to="/micoach">MICOACH</NavLink>
     </NavWrapper>
   </Sidebar>
 );
