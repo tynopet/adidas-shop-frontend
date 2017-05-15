@@ -10,7 +10,7 @@ const SaveButton = styled.button`
   font-family: AvenirNextBold;
   font-size: 18px;
   position: absolute;
-  left: 31px;
+  left: 0;
   top: 156px;
   height: 75px;
   width: 75px;

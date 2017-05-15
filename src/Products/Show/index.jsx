@@ -22,7 +22,7 @@ const Model = styled.h1`
   font-weight: bold;
   margin: 0;
   position: absolute;
-  left: 31px;
+  left: 0;
   top: 0;
   width: 226px;
 `;
@@ -45,8 +45,19 @@ const Price = styled.h2`
   top: 48px;
 `;
 
+const Description = styled.p`
+  font-family: AvenirNext;
+  font-size: 33px;
+  font-weight: 500;
+  color: #d8d8d8;
+`;
+
+const FirstWord = styled.span`
+  color: #6e6e6e;
+`;
+
 const Show = () => (
-  <Layout>
+  <Layout isShow>
     <Row>
       <Col lg={12}>
         <PrewiewWrapper>
@@ -65,6 +76,11 @@ const Show = () => (
       </Col>
     </Row>
     <Carousel />
+    <Description>
+      <FirstWord>Adidas</FirstWord> is a German multinational corporation,<br />
+      headquartered in Herzogenaurach, Germany, that designs <br />
+      and manufactures shoes, clothing and accessories.
+    </Description>
     <BuyButton />
   </Layout>
 );

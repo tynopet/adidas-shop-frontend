@@ -8,8 +8,8 @@ const Label = styled.span`
   font-weight: bold;
   font-family: AvenirNextBold;
   background-color: #ff5c5c;
-  top: ${props => (props.isShow ? '0' : '7px')};
-  right: 7px;
+  top: ${props => (props.isShow ? '0' : '8px')};
+  right: 8px;
 `;
 
 export default Label;

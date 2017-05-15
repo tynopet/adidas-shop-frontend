@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import filterIcon from './filter.png';
 
@@ -9,9 +8,11 @@ const FilterWrapper = styled.section`
   font-family: AvenirNextBold;
   font-size: 24px;
   font-weight: normal;
-  margin-top: 11px;
-  margin-bottom: 22px;
-  padding-bottom: 11px;
+  padding: 11px 2rem;
+  position: fixed;
+  top: 0;
+  left: 414px;
+  width: calc(100% - 414px);
   border-bottom: 3px solid #e7e7e7;
 `;
 
@@ -30,6 +31,7 @@ const FilterButton = styled.button`
   color: ${props => (props.selected ? '#4d42f8' : '#d6d6d6')};
   cursor: pointer;
   padding: 0;
+  margin-right: 10px;
 
   &:focus {
     outline: none;
@@ -38,13 +40,16 @@ const FilterButton = styled.button`
   &:hover {
     color: #4d42f8;
   }
+
+  &:last-child {
+    margin-right: 0;
+  }
 `;
 
 const GenderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 180px;
 `;
 
 const SizeWrapper = styled.div`
@@ -52,7 +57,6 @@ const SizeWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-left: 72px;
-  width: 324px;
 `;
 
 const SizeTitle = styled.span`
@@ -61,25 +65,21 @@ const SizeTitle = styled.span`
 `;
 
 export default () => (
-  <Row>
-    <Col lg={12}>
-      <FilterWrapper>
-        <FilterImage src={filterIcon} alt="filter" />
-        <GenderWrapper>
-          <FilterButton type="button" selected>MAN</FilterButton>
-          <FilterButton type="button">WOMAN</FilterButton>
-        </GenderWrapper>
-        <SizeWrapper>
-          <SizeTitle>SIZE</SizeTitle>
-          <FilterButton type="button">36</FilterButton>
-          <FilterButton type="button">37</FilterButton>
-          <FilterButton type="button">38</FilterButton>
-          <FilterButton type="button">39</FilterButton>
-          <FilterButton type="button">40</FilterButton>
-          <FilterButton type="button" selected>41</FilterButton>
-          <FilterButton type="button">42</FilterButton>
-        </SizeWrapper>
-      </FilterWrapper>
-    </Col>
-  </Row>
+  <FilterWrapper>
+    <FilterImage src={filterIcon} alt="filter" />
+    <GenderWrapper>
+      <FilterButton type="button" selected>MAN</FilterButton>
+      <FilterButton type="button">WOMAN</FilterButton>
+    </GenderWrapper>
+    <SizeWrapper>
+      <SizeTitle>SIZE</SizeTitle>
+      <FilterButton type="button">36</FilterButton>
+      <FilterButton type="button">37</FilterButton>
+      <FilterButton type="button">38</FilterButton>
+      <FilterButton type="button">39</FilterButton>
+      <FilterButton type="button">40</FilterButton>
+      <FilterButton type="button" selected>41</FilterButton>
+      <FilterButton type="button">42</FilterButton>
+    </SizeWrapper>
+  </FilterWrapper>
 );
