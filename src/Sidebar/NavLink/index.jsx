@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavLink = styled(({ selected, submenu, ...props }) => <Link {...props} />)`
-  color: ${props => (props.selected ? '#fff' : '#3c3c3c')};
+const StyledNavLink = styled(({ selected, submenu, ...props }) => <NavLink {...props} activeStyle={{ color: '#fff' }} />) `
+  color: #3c3c3c;
   cursor: pointer;
   font-family: ${props => (props.submenu ? 'AndaleMono' : 'AvenirNextBold')};
   font-weight: ${props => (props.submenu ? 'normal' : 'bold')};
@@ -11,4 +11,4 @@ const NavLink = styled(({ selected, submenu, ...props }) => <Link {...props} />)
   text-decoration: none;
 `;
 
-export default NavLink;
+export default StyledNavLink;
