@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Label from './../../Label';
 
-const ShoeLink = styled(Link)`
+const ShoeLink = styled(Link) `
   position: relative;
   display: flex;
   flex-direction: column;
@@ -17,8 +17,6 @@ const ShoeLink = styled(Link)`
 `;
 
 const ShoeImage = styled.img`
-  width: 300px;
-  height: 200px;
   object-fit: contain;
 `;
 
@@ -29,8 +27,9 @@ const Price = styled.span`
   color: ${props => (props.isSale ? '#fff' : '#0d0d0d')};
   cursor: pointer;
   font-size: 30px;
-  padding: 23px 107px 27px 106px;
+  padding: 23px 0 27px 0;
   text-decoration: none;
+  text-align: center;
 `;
 
 const Shoe = ({ imageLink, imageAlt, isSale, price }) => (
