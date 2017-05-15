@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import logo from './logo.png';
+import logo from './logo.svg';
 
-const LogoWrapper = styled(Link)`
-  margin-top: 31px;
-  margin-bottom: 21px;
+const LogoWrapper = styled(Link) `
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 30px;
   text-align: center;
 `;
 

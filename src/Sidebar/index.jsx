@@ -16,7 +16,7 @@ const Sidebar = styled.aside`
 `;
 
 const NavWrapper = styled.nav`
-  margin-top: 148px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;

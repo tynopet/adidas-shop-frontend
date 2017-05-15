@@ -7,7 +7,7 @@ const StyledNavLink = styled(({ selected, submenu, ...props }) => <NavLink {...p
   cursor: pointer;
   font-family: ${props => (props.submenu ? 'AndaleMono' : 'AvenirNextBold')};
   font-weight: ${props => (props.submenu ? 'normal' : 'bold')};
-  margin-bottom: ${props => (props.submenu ? '30px;' : '29px')};
+  margin-bottom: ${props => (props.submenu ? '25px;' : '30px')};
   text-decoration: none;
 `;
 

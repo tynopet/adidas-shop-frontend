@@ -4,6 +4,7 @@ import { Grid } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
 const MainWrapper = styled.main`
+  flex-grow: 1;
   margin-top: ${props => (props.isList ? '102px' : '0')};
   margin-bottom: ${props => (props.isShow ? '115px' : '0')}
 `;
