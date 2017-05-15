@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import filterIcon from './filter.png';
 
-const FilterWrapper = styled.section`
+const Container = styled.section`
   display: flex;
   justify-content: flex-start;
   font-family: AvenirNextBold;
@@ -16,13 +16,13 @@ const FilterWrapper = styled.section`
   border-bottom: 3px solid #e7e7e7;
 `;
 
-const FilterImage = styled.img`
+const Image = styled.img`
   background-color: #ebebeb;
   margin-right: 30px;
   padding: 11px 8px;
 `;
 
-const FilterButton = styled.button`
+const Button = styled.button`
   background-color: transparent;
   border: none;
   font-family: AvenirNextBold;
@@ -65,21 +65,21 @@ const SizeTitle = styled.span`
 `;
 
 export default () => (
-  <FilterWrapper>
-    <FilterImage src={filterIcon} alt="filter" />
+  <Container>
+    <Image src={filterIcon} alt="filter" />
     <GenderWrapper>
-      <FilterButton type="button" selected>MAN</FilterButton>
-      <FilterButton type="button">WOMAN</FilterButton>
+      <Button type="button" selected>MAN</Button>
+      <Button type="button">WOMAN</Button>
     </GenderWrapper>
     <SizeWrapper>
       <SizeTitle>SIZE</SizeTitle>
-      <FilterButton type="button">36</FilterButton>
-      <FilterButton type="button">37</FilterButton>
-      <FilterButton type="button">38</FilterButton>
-      <FilterButton type="button">39</FilterButton>
-      <FilterButton type="button">40</FilterButton>
-      <FilterButton type="button" selected>41</FilterButton>
-      <FilterButton type="button">42</FilterButton>
+      <Button type="button">36</Button>
+      <Button type="button">37</Button>
+      <Button type="button">38</Button>
+      <Button type="button">39</Button>
+      <Button type="button">40</Button>
+      <Button type="button" selected>41</Button>
+      <Button type="button">42</Button>
     </SizeWrapper>
-  </FilterWrapper>
+  </Container>
 );
