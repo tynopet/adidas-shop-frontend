@@ -1,10 +1,6 @@
 # adidas-shop-frontend
 
-[Surge](http://dramatic-book.surge.sh/)
-
 Adidas shop for frontend course by Evgeny Rodionov
-
-[Surge](http://dramatic-book.surge.sh/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
