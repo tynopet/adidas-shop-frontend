@@ -13,6 +13,7 @@ const SearchWrapper = styled.div`
     height: 30px;
     position: absolute;
     left: 23px;
+    top: 10px;
   }
 `;
 
@@ -22,16 +23,15 @@ const SearchInput = styled.input`
   font-size: 24px;
   background-color: #0e0e0e;
   margin: 0 22px;
-  color: #3a3a3a;
-  font-weight: bold;
+  color: #fff;
   height: 30px;
-  font-size: 24px;
   width: calc(100% - 79px);
   border-bottom: 4px solid #373737;
-  padding-left: 35px;
+  padding: 10px 0 10px 35px;
 
   &:focus {
     outline: none;
+    border-bottom: 4px solid #fff;
   }
 `;
 

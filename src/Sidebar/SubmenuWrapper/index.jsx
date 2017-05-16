@@ -8,7 +8,7 @@ const SubmenuContainer = styled.nav`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 21px;
+  margin-bottom: 25px;
 `;
 
 const SubmenuTitle = styled.span`

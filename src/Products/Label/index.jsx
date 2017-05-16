@@ -5,11 +5,11 @@ const Label = styled.span`
   font-size: 14px;
   padding: 6px 20px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   font-family: AvenirNextBold;
   background-color: #ff5c5c;
-  top: ${props => (props.isShow ? '0' : '7px')};
-  right: 7px;
+  top: ${props => (props.isShow ? '0' : '8px')};
+  right: 8px;
 `;
 
 export default Label;

@@ -26,6 +26,7 @@ const Price = styled.span`
   border-top: 8px solid #f4f4f4;
   color: ${props => (props.isSale ? '#fff' : '#0d0d0d')};
   cursor: pointer;
+  font-family: AvenirNextBold;
   font-size: 30px;
   padding: 23px 0 27px 0;
   text-decoration: none;
