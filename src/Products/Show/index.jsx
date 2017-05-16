@@ -23,7 +23,8 @@ const Model = styled.h1`
   color: #3a3a3a;
   font-family: AvenirNextBold;
   font-size: 64px;
-  font-weight: bold;
+  font-weight: normal;
+  line-height: 1;
   margin: 0;
   position: absolute;
   left: 0;
