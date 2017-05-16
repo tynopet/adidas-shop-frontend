@@ -15,8 +15,8 @@ const Container = styled.main`
 const PrewiewWrapper = styled.section`
   display: flex;
   justify-content: center;
-  margin-top: 51px;
   position: relative;
+  margin-top: 25px;
 `;
 
 const Model = styled.h1`
