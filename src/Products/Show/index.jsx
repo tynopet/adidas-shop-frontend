@@ -1,12 +1,16 @@
 import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import Layout from './../Layout';
 import SaveButton from './SaveButton';
 import ColorButton from './ColorButton';
 import Label from './../Label';
 import Carousel from './Carousel';
 import BuyButton from './BuyButton';
+
+const Container = styled.main`
+  margin-bottom: 115px;
+  flex: 1;
+`;
 
 const PrewiewWrapper = styled.section`
   display: flex;
@@ -57,32 +61,34 @@ const FirstWord = styled.span`
 `;
 
 const Show = () => (
-  <Layout isShow>
-    <Row>
-      <Col lg={12}>
-        <PrewiewWrapper>
-          <img src="/img/bitmap-copy.jpg" alt="bitmap" />
-          <Model>ULTRA BOOST</Model>
-          <SaveButton />
-          <ColorsWrapper>
-            <ColorButton color="#c5c5c5" />
-            <ColorButton color="#4d87ca" />
-            <ColorButton color="#4a4a4a" />
-            <ColorButton color="#e0e0e0" />
-          </ColorsWrapper>
-          <Label isShow>SALE</Label>
-          <Price>$170</Price>
-        </PrewiewWrapper>
-      </Col>
-    </Row>
-    <Carousel />
-    <Description>
-      <FirstWord>Adidas</FirstWord> is a German multinational corporation,<br />
-      headquartered in Herzogenaurach, Germany, that designs <br />
-      and manufactures shoes, clothing and accessories.
-    </Description>
-    <BuyButton />
-  </Layout>
+  <Container>
+    <Grid fluid>
+      <Row>
+        <Col lg={12}>
+          <PrewiewWrapper>
+            <img src="/img/bitmap-copy.jpg" alt="bitmap" />
+            <Model>ULTRA BOOST</Model>
+            <SaveButton />
+            <ColorsWrapper>
+              <ColorButton color="#c5c5c5" />
+              <ColorButton color="#4d87ca" />
+              <ColorButton color="#4a4a4a" />
+              <ColorButton color="#e0e0e0" />
+            </ColorsWrapper>
+            <Label isShow>SALE</Label>
+            <Price>$170</Price>
+          </PrewiewWrapper>
+        </Col>
+      </Row>
+      <Carousel />
+      <Description>
+        <FirstWord>Adidas</FirstWord> is a German multinational corporation,<br />
+        headquartered in Herzogenaurach, Germany, that designs <br />
+        and manufactures shoes, clothing and accessories.
+      </Description>
+      <BuyButton />
+    </Grid>
+  </Container>
 );
 
 export default Show;

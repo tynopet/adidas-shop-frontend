@@ -14,6 +14,8 @@ const Container = styled.section`
   left: 414px;
   width: calc(100% - 414px);
   border-bottom: 3px solid #e7e7e7;
+  background-color: #fff;
+  z-index: 1;
 `;
 
 const Image = styled.img`
