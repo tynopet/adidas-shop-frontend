@@ -29,19 +29,19 @@ export default () => (
     <Search />
     <NavWrapper>
       <Submenu title="football">
-        <NavLink exact to="football/shoes" submenu>SHOES</NavLink>
-        <NavLink to="football/clothing" submenu>CLOTHING</NavLink>
-        <NavLink to="football/accesories" submenu>ACCESORIES</NavLink>
+        <NavLink exact to="/football/shoes" submenu>SHOES</NavLink>
+        <NavLink exact to="/football/clothing" submenu>CLOTHING</NavLink>
+        <NavLink exact to="/football/accesories" submenu>ACCESORIES</NavLink>
       </Submenu>
       <Submenu title="running">
-        <NavLink exact to="running/shoes" submenu>SHOES</NavLink>
-        <NavLink to="running/clothing" submenu>CLOTHING</NavLink>
-        <NavLink to="running/accesories" submenu>ACCESORIES</NavLink>
+        <NavLink exact to="/running/shoes" submenu>SHOES</NavLink>
+        <NavLink exact to="/running/clothing" submenu>CLOTHING</NavLink>
+        <NavLink exact to="/running/accesories" submenu>ACCESORIES</NavLink>
       </Submenu>
       <Submenu title="basketball">
-        <NavLink exact to="basketball/shoes" submenu>SHOES</NavLink>
-        <NavLink to="basketball/clothing" submenu>CLOTHING</NavLink>
-        <NavLink to="basketball/accesories" submenu>ACCESORIES</NavLink>
+        <NavLink exact to="/basketball/shoes" submenu>SHOES</NavLink>
+        <NavLink exact to="/basketball/clothing" submenu>CLOTHING</NavLink>
+        <NavLink exact to="/basketball/accesories" submenu>ACCESORIES</NavLink>
       </Submenu>
     </NavWrapper>
   </Sidebar>
