@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SubmenuContainer, SubmenuTitle, SubmenuWrapper } from './styled-components';
+import { Container, Title, Wrapper } from './styled-components';
 
 class Submenu extends Component {
   constructor() {
     super();
     this.state = {
-      opened: false,
+      isOpen: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.setState({ opened: !this.state.opened });
+    this.setState(state => ({ isOpen: !state.isOpen }));
   }
 
   render() {
     const { title, children } = this.props;
     return (
-      <SubmenuContainer>
-        <SubmenuTitle onClick={this.handleClick}>{title}</SubmenuTitle>
-        <SubmenuWrapper opened={this.state.opened}>
-          {children}
-        </SubmenuWrapper>
-      </SubmenuContainer>
+      <Container>
+        <Title onClick={this.handleClick} isOpen={this.state.isOpen}>{title}</Title>
+        {this.state.isOpen &&
+          <Wrapper>
+            {children}
+          </Wrapper>}
+      </Container>
     );
   }
 }

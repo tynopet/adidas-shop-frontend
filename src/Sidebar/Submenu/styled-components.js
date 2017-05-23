@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import dropdownIcon from './dropdown.svg';
 
-export const SubmenuContainer = styled.nav`
+export const Container = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@ export const SubmenuContainer = styled.nav`
   margin-bottom: 25px;
 `;
 
-export const SubmenuTitle = styled.span`
+export const Title = styled.span`
   color: #fff;
   cursor: pointer;
   font-family: AvenirNextBold;
@@ -29,11 +29,12 @@ export const SubmenuTitle = styled.span`
     width: 14px;
     right: -20px;
     top: 10px;
+    transform: rotate(${props => (props.isOpen ? 180 : 0)}deg);
   }
 `;
 
-export const SubmenuWrapper = styled.span`
-  display: ${props => (props.opened ? 'flex' : 'none')};
+export const Wrapper = styled.span`
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
