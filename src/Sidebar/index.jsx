@@ -15,7 +15,7 @@ const Sidebar = styled.aside`
   font-size: 24px;
 `;
 
-const NavWrapper = styled.nav`
+const Nav = styled.nav`
   margin-top: 150px;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ export default () => (
   <Sidebar>
     <Logo />
     <Search />
-    <NavWrapper>
+    <Nav>
       <Submenu title="football">
         <NavLink to="/football/shoes">SHOES</NavLink>
         <NavLink to="/football/clothing">CLOTHING</NavLink>
@@ -43,6 +43,6 @@ export default () => (
         <NavLink to="/basketball/clothing">CLOTHING</NavLink>
         <NavLink to="/basketball/accesories">ACCESORIES</NavLink>
       </Submenu>
-    </NavWrapper>
+    </Nav>
   </Sidebar>
 );
