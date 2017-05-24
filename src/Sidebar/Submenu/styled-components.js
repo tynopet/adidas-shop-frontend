@@ -9,7 +9,7 @@ export const Container = styled.nav`
   margin-bottom: 25px;
 `;
 
-export const ExpandBtn = styled.button`
+export const Button = styled.button`
   background-color: transparent;
   border: none;
   color: #fff;
