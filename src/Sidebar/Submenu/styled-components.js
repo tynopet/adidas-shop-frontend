@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import dropdownIcon from './dropdown.svg';
 
-const SubmenuContainer = styled.nav`
+export const SubmenuContainer = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +9,7 @@ const SubmenuContainer = styled.nav`
   margin-bottom: 25px;
 `;
 
-const SubmenuTitle = styled.span`
+export const SubmenuTitle = styled.span`
   color: #fff;
   cursor: pointer;
   font-family: AvenirNextBold;
@@ -19,6 +17,8 @@ const SubmenuTitle = styled.span`
   position: relative;
   margin-bottom: 15px;
   text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
 
   &::before {
     background-image: url(${dropdownIcon});
@@ -32,25 +32,9 @@ const SubmenuTitle = styled.span`
   }
 `;
 
-const Submenu = styled.span`
-  display: flex;
+export const SubmenuWrapper = styled.span`
+  display: ${props => (props.opened ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
-
-const SubmenuWrapper = ({ children, title }) => (
-  <SubmenuContainer>
-    <SubmenuTitle>{title}</SubmenuTitle>
-    <Submenu>
-      {children}
-    </Submenu>
-  </SubmenuContainer>
-);
-
-SubmenuWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-};
-
-export default SubmenuWrapper;
