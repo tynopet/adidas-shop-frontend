@@ -20,16 +20,17 @@ class Show extends Component {
     super();
     this.state = {
       selectedColor: '#c5c5c5',
-      colors: ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'],
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    this.setState({ selectedColor: e.target.getAttribute('color') });
+  handleClick(color) {
+    this.setState({ selectedColor: color });
   }
 
   render() {
+    const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
     return (
       <Container>
         <Grid fluid>
@@ -40,8 +41,8 @@ class Show extends Component {
                 <Model>ULTRA BOOST</Model>
                 <SaveButton color={this.state.selectedColor}>SAVE</SaveButton>
                 <ColorsWrapper>
-                  {this.state.colors.map(color => (
-                    <ColorButton onClick={this.handleClick} color={color} key={color} />
+                  {colors.map(color => (
+                    <ColorButton onClick={() => this.handleClick(color)} color={color} key={color} />
                   ))}
                 </ColorsWrapper>
                 <Label isShow>SALE</Label>
