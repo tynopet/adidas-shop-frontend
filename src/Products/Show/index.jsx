@@ -15,22 +15,22 @@ import {
   SaveButton,
 } from './styled-components';
 
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
 class Show extends Component {
   constructor() {
     super();
     this.state = {
-      selectedColor: '#c5c5c5',
+      color: '#c5c5c5',
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(color) {
-    this.setState({ selectedColor: color });
+    this.setState({ color });
   }
 
   render() {
-    const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
-
     return (
       <Container>
         <Grid fluid>
@@ -39,10 +39,14 @@ class Show extends Component {
               <PrewiewWrapper>
                 <img src="/img/bitmap-copy.jpg" alt="bitmap" />
                 <Model>ULTRA BOOST</Model>
-                <SaveButton color={this.state.selectedColor}>SAVE</SaveButton>
+                <SaveButton color={this.state.color}>SAVE</SaveButton>
                 <ColorsWrapper>
                   {colors.map(color => (
-                    <ColorButton onClick={() => this.handleClick(color)} color={color} key={color} />
+                    <ColorButton
+                      onClick={() => this.handleClick(color)}
+                      color={color}
+                      key={color}
+                    />
                   ))}
                 </ColorsWrapper>
                 <Label isShow>SALE</Label>
