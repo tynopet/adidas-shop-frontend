@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Title, Wrapper } from './styled-components';
+import { Container, ExpandBtn, Wrapper } from './styled-components';
 
 class Submenu extends Component {
   constructor() {
@@ -19,7 +19,7 @@ class Submenu extends Component {
     const { title, children } = this.props;
     return (
       <Container>
-        <Title onClick={this.handleClick} isOpen={this.state.isOpen}>{title}</Title>
+        <ExpandBtn onClick={this.handleClick} isOpen={this.state.isOpen}>{title}</ExpandBtn>
         {this.state.isOpen &&
           <Wrapper>
             {children}
