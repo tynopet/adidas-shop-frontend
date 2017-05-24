@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import Search from './Search';
 import NavLink from './NavLink';
-import SubmenuWrapper from './SubmenuWrapper';
+import Submenu from './Submenu';
 
 const Sidebar = styled.aside`
   min-width: 414px;
@@ -28,13 +28,21 @@ export default () => (
     <Logo />
     <Search />
     <NavWrapper>
-      <SubmenuWrapper title="SPORTS">
-        <NavLink exact to="/" submenu>SHOES</NavLink>
-        <NavLink to="/clothing" submenu>CLOTHING</NavLink>
-        <NavLink to="/accesories" submenu>ACCESORIES</NavLink>
-      </SubmenuWrapper>
-      <NavLink to="/brands">BRANDS</NavLink>
-      <NavLink to="/micoach">MICOACH</NavLink>
+      <Submenu title="football">
+        <NavLink to="/football/shoes">SHOES</NavLink>
+        <NavLink to="/football/clothing">CLOTHING</NavLink>
+        <NavLink to="/football/accesories">ACCESORIES</NavLink>
+      </Submenu>
+      <Submenu title="running">
+        <NavLink to="/running/shoes">SHOES</NavLink>
+        <NavLink to="/running/clothing">CLOTHING</NavLink>
+        <NavLink to="/running/accesories">ACCESORIES</NavLink>
+      </Submenu>
+      <Submenu title="basketball">
+        <NavLink to="/basketball/shoes">SHOES</NavLink>
+        <NavLink to="/basketball/clothing">CLOTHING</NavLink>
+        <NavLink to="/basketball/accesories">ACCESORIES</NavLink>
+      </Submenu>
     </NavWrapper>
   </Sidebar>
 );
