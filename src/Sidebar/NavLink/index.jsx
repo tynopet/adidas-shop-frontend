@@ -5,9 +5,9 @@ import styled from 'styled-components';
 const StyledNavLink = styled(({ selected, submenu, ...props }) => <NavLink {...props} activeStyle={{ color: '#fff' }} />) `
   color: #3c3c3c;
   cursor: pointer;
-  font-family: ${props => (props.submenu ? 'AndaleMono' : 'AvenirNextBold')};
-  font-weight: ${props => (props.submenu ? 'normal' : 'bold')};
-  margin-bottom: ${props => (props.submenu ? '25px;' : '30px')};
+  font-family: AndaleMono;
+  font-weight: normal;
+  margin-bottom: 25px;
   text-decoration: none;
 `;
 

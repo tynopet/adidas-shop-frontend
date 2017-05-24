@@ -9,11 +9,15 @@ export const Container = styled.nav`
   margin-bottom: 25px;
 `;
 
-export const Title = styled.span`
+export const Title = styled.button`
+  background-color: transparent;
+  border: none;
   color: #fff;
   cursor: pointer;
   font-family: AvenirNextBold;
   font-weight: bold;
+  font-size: 24px;
+  padding: 0;
   position: relative;
   margin-bottom: 15px;
   text-decoration: none;
@@ -30,6 +34,10 @@ export const Title = styled.span`
     right: -20px;
     top: 10px;
     transform: rotate(${props => (props.isOpen ? 180 : 0)}deg);
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
