@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-const ItemWrapper = styled.button`
+const Button = styled.button`
   cursor: pointer;
-  border: none;
+  border: ${props => (props.selected ? 'solid 5px #e8e8ea' : 'none')};
   background-color: transparent;
 
   &:focus {
@@ -10,4 +10,4 @@ const ItemWrapper = styled.button`
   }
 `;
 
-export default ItemWrapper;
+export default Button;

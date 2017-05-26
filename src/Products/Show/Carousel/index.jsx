@@ -1,74 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
-import Item from './Item';
+import Preview from './Preview';
+import Container from './styled-components';
 
-const MorePhotos = styled.button`
-  background-color: transparent;
-  border: none;
-  color: #c0c0c0;
-  cursor: pointer;
-  font-face: AvenirNext;
-  font-size: 14px;
-  text-align: start;
-  vertical-align: middle;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-const ItemWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-`;
-
-const Line = styled.div`
-  background-color: #e7e7e7;
-  border-radius: 1.5px;
-  margin-bottom: 3px;
-  height: 3px;
-  width: 159px;
-`;
-
-const Carousel = () => (
+const Carousel = ({ images, onClick, selected }) => (
   <Row>
-    <Col lg={2}>
-      <ItemWrapper>
-        <Item src="/img/bitmap.jpg" alt="shoe" />
-      </ItemWrapper>
-    </Col>
-    <Col lg={2}>
-      <ItemWrapper>
-        <Item src="/img/bitmap_2.jpg" alt="shoe" />
-      </ItemWrapper>
-    </Col>
-    <Col lg={2}>
-      <ItemWrapper>
-        <Item src="/img/bitmap_3.jpg" alt="shoe" />
-      </ItemWrapper>
-    </Col>
-    <Col lg={2}>
-      <ItemWrapper>
-        <Item src="/img/bitmap_4.jpg" alt="shoe" />
-      </ItemWrapper>
-    </Col>
-    <Col lg={3}>
-      <ItemWrapper>
-        <Line />
-        <Line />
-        <Line />
-      </ItemWrapper>
-    </Col>
-    <Col lg={1}>
-      <ItemWrapper>
-        <MorePhotos>see <br /> more <br /> photos</MorePhotos>
-      </ItemWrapper>
-    </Col>
+    {images.map(({ id, src, alt }) => (
+      <Col lg={2} key={id} onClick={() => onClick(id)}>
+        <Container>
+          <Preview src={src} alt={alt} selected={id === selected} />
+        </Container>
+      </Col>
+    ))}
   </Row>
 );
+
+Carousel.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+  })).isRequired,
+  onClick: PropTypes.func.isRequired,
+  selected: PropTypes.number.isRequired,
+};
 
 export default Carousel;
