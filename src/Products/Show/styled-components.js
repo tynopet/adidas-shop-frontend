@@ -81,7 +81,7 @@ export const Preview = styled.img`
   object-fit: contain;
 `;
 
-export const PreviewWrapper = styled.section`
+export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   position: relative;

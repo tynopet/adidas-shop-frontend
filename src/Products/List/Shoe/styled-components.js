@@ -19,7 +19,7 @@ export const StyledLink = styled(Link) `
 
 export const Price = styled.span`
   background-image: ${props => (props.isSale ? 'linear-gradient(107deg, #0c09bf, #966dd8)' : 'none')};
-  background-color: ${props => (props.isSale ? 'none' : props.color)};
+  background-color: ${props => (props.isSale ? 'none' : '#fff')};
   border-top: 8px solid #f4f4f4;
   color: ${props => (props.isSale ? '#fff' : '#0d0d0d')};
   cursor: pointer;

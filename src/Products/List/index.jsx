@@ -16,28 +16,28 @@ const List = ({ location }) => (
       <Filter />
       <Row>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} price={220} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} price={220} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} price={220} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} isSale price={170} to={`${location.pathname}/1`} />
         </Col>
         <Col lg={4} md={4} sm={6} xs={12}>
-          <Shoe imageLink={'/img/bitmap.png'} imageAlt={'shoe'} price={220} link={location.pathname} />
+          <Shoe imageSrc={'/img/bitmap.png'} imageAlt={'shoe'} price={220} to={`${location.pathname}/1`} />
         </Col>
       </Row>
     </Grid>

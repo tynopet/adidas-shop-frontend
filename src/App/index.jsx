@@ -13,9 +13,9 @@ const App = () => (
   <Router>
     <AppWrapper>
       <Sidebar />
-      <Redirect from="/" to="/football/shoes" />
-      <Route exact path="/:category/:group" component={List} />
-      <Route path="/:category/:group/:id" component={Show} />
+      <Route exact path="/" render={() => <Redirect to="/products/football/shoes" />} />
+      <Route exact path="/products/:category/:group" component={List} />
+      <Route path="/products/:category/:group/:id" component={Show} />
     </AppWrapper>
   </Router>
 );

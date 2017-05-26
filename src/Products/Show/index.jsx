@@ -11,7 +11,7 @@ import {
   FirstWord,
   Model,
   Preview,
-  PreviewWrapper,
+  Wrapper,
   Price,
   SaveButton,
 } from './styled-components';
@@ -54,25 +54,19 @@ class Show extends Component {
   constructor() {
     super();
     this.state = {
-      color: localStorage.getItem('color') || '#c5c5c5',
-      preview: 1,
+      colorId: 0,
+      previewId: 0,
     };
     this.handleColorClick = this.handleColorClick.bind(this);
-    this.handlePrewievClick = this.handlePrewievClick.bind(this);
+    this.handleCarouselClick = this.handleCarouselClick.bind(this);
   }
 
-  handleColorClick(color) {
-    this.setState({ color });
-    localStorage.setItem('color', color);
+  handleColorClick(id) {
+    this.setState({ colorId: id });
   }
 
-  handlePrewievClick(id) {
-    this.setState({ preview: id });
-  }
-
-  renderPrewiew() {
-    const image = images.find(img => img.id === this.state.preview);
-    return (<Preview src={image.src} alt={image.alt} />);
+  handleCarouselClick(id) {
+    this.setState({ previewId: id });
   }
 
   render() {
@@ -81,13 +75,13 @@ class Show extends Component {
         <Grid fluid>
           <Row>
             <Col lg={12}>
-              <PreviewWrapper>
+              <Wrapper>
                 <Model>ULTRA BOOST</Model>
-                <SaveButton color={this.state.color}>SAVE</SaveButton>
+                <SaveButton color={colors[this.state.colorId]}>SAVE</SaveButton>
                 <ColorsWrapper>
-                  {colors.map(color => (
+                  {colors.map((color, id) => (
                     <ColorButton
-                      onClick={() => this.handleColorClick(color)}
+                      onClick={() => this.handleColorClick(id)}
                       color={color}
                       key={color}
                     />
@@ -95,17 +89,24 @@ class Show extends Component {
                 </ColorsWrapper>
                 <Label isShow>SALE</Label>
                 <Price>$170</Price>
-                {this.renderPrewiew()}
-              </PreviewWrapper>
+                <Preview
+                  src={images[this.state.previewId].src}
+                  alt={images[this.state.previewId].alt}
+                />
+              </Wrapper>
             </Col>
           </Row>
-          <Carousel images={images} onClick={this.handlePrewievClick} selected={this.state.preview} />
+          <Carousel
+            images={images}
+            onClick={this.handleCarouselClick}
+            selected={this.state.previewId}
+          />
           <Description>
             <FirstWord>Adidas</FirstWord> is a German multinational corporation,<br />
             headquartered in Herzogenaurach, Germany, that designs <br />
             and manufactures shoes, clothing and accessories.
           </Description>
-          <BuyButton color={this.state.color}>buy now</BuyButton>
+          <BuyButton color={colors[this.state.colorId]}>buy now</BuyButton>
         </Grid>
       </Container>
     );

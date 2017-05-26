@@ -11,7 +11,7 @@ const LogoWrapper = styled(Link) `
 `;
 
 export default () => (
-  <LogoWrapper to="/football/shoes">
+  <LogoWrapper to="/">
     <img src={logo} alt="logo" />
   </LogoWrapper>
 );

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './styled-components';
 
-const Preview = ({ src, alt, selected }) => (
-  <Button selected={selected}>
+const Preview = ({ src, alt, isSelected }) => (
+  <Button isSelected={isSelected}>
     <img src={src} alt={alt} />
   </Button>
 );
@@ -11,7 +11,7 @@ const Preview = ({ src, alt, selected }) => (
 Preview.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  selected: PropTypes.bool.isRequired,
+  isSelected: PropTypes.bool.isRequired,
 };
 
 export default Preview;

@@ -6,10 +6,10 @@ import Container from './styled-components';
 
 const Carousel = ({ images, onClick, selected }) => (
   <Row>
-    {images.map(({ id, src, alt }) => (
-      <Col lg={2} key={id} onClick={() => onClick(id)}>
+    {images.map(({ id, src, alt }, idx) => (
+      <Col lg={2} key={id} onClick={() => onClick(idx)}>
         <Container>
-          <Preview src={src} alt={alt} selected={id === selected} />
+          <Preview src={src} alt={alt} isSelected={id === selected} />
         </Container>
       </Col>
     ))}
