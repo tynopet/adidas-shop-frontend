@@ -54,19 +54,19 @@ class Show extends Component {
   constructor() {
     super();
     this.state = {
-      colorId: 0,
-      previewId: 0,
+      colorIdx: 0,
+      previewIdx: 0,
     };
     this.handleColorClick = this.handleColorClick.bind(this);
     this.handleCarouselClick = this.handleCarouselClick.bind(this);
   }
 
-  handleColorClick(id) {
-    this.setState({ colorId: id });
+  handleColorClick(colorIdx) {
+    this.setState({ colorIdx });
   }
 
-  handleCarouselClick(id) {
-    this.setState({ previewId: id });
+  handleCarouselClick(previewIdx) {
+    this.setState({ previewIdx });
   }
 
   render() {
@@ -77,7 +77,7 @@ class Show extends Component {
             <Col lg={12}>
               <Wrapper>
                 <Model>ULTRA BOOST</Model>
-                <SaveButton color={colors[this.state.colorId]}>SAVE</SaveButton>
+                <SaveButton color={colors[this.state.colorIdx]}>SAVE</SaveButton>
                 <ColorsWrapper>
                   {colors.map((color, id) => (
                     <ColorButton
@@ -90,8 +90,8 @@ class Show extends Component {
                 <Label isShow>SALE</Label>
                 <Price>$170</Price>
                 <Preview
-                  src={images[this.state.previewId].src}
-                  alt={images[this.state.previewId].alt}
+                  src={images[this.state.previewIdx].src}
+                  alt={images[this.state.previewIdx].alt}
                 />
               </Wrapper>
             </Col>
@@ -99,14 +99,14 @@ class Show extends Component {
           <Carousel
             images={images}
             onClick={this.handleCarouselClick}
-            selected={this.state.previewId}
+            selected={this.state.previewIdx}
           />
           <Description>
             <FirstWord>Adidas</FirstWord> is a German multinational corporation,<br />
             headquartered in Herzogenaurach, Germany, that designs <br />
             and manufactures shoes, clothing and accessories.
           </Description>
-          <BuyButton color={colors[this.state.colorId]}>buy now</BuyButton>
+          <BuyButton color={colors[this.state.colorIdx]}>buy now</BuyButton>
         </Grid>
       </Container>
     );
