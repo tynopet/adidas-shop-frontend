@@ -7,6 +7,10 @@ import Show from '../Products/Show';
 
 const AppWrapper = styled.div`
   display: flex;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
 `;
 
 const App = () => (

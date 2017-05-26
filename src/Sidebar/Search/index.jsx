@@ -15,6 +15,10 @@ const SearchWrapper = styled.div`
     left: 23px;
     top: 10px;
   }
+
+  @media (max-width: 575px) {
+    display: none;
+  }
 `;
 
 const SearchInput = styled.input`

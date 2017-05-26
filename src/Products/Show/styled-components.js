@@ -1,4 +1,17 @@
 import styled from 'styled-components';
+import Label from './../Label';
+
+export const StyledLabel = styled(Label)`
+  @media (max-width: 575px) {
+    position: static;
+  }
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const BuyButton = styled.button`
   background-image: linear-gradient(to right, ${props => props.color}, #27275d);
@@ -19,6 +32,12 @@ export const BuyButton = styled.button`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 575px) {
+    left: 0;
+    font-size: 20px;
+    width: 100vw;
+  }  
 `;
 
 export const ColorButton = styled.button`
@@ -44,11 +63,19 @@ export const ColorsWrapper = styled.span`
   position: absolute;
   right: 142px;
   top: 0;
+
+  @media (max-width: 575px) {
+    position: static;
+  }
 `;
 
 export const Container = styled.main`
   margin-bottom: 115px;
   flex: 1;
+
+  @media (max-width: 575px) {
+    margin-top: 94px;
+  }
 `;
 
 export const Description = styled.p`
@@ -73,12 +100,23 @@ export const Model = styled.h1`
   left: 0;
   top: 0;
   width: 226px;
+
+  @media (max-width: 575px) {
+    font-size: 36px;
+    width: auto;
+    position: static;
+  }
 `;
 
 export const Preview = styled.img`
   width: 804px;
   height: 525px;
   object-fit: contain;
+
+  @media (max-width: 575px) {
+    width: 383px;
+    height: 250px;
+  }
 `;
 
 export const Wrapper = styled.section`
@@ -86,6 +124,10 @@ export const Wrapper = styled.section`
   justify-content: center;
   position: relative;
   margin-top: 25px;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
 `;
 
 export const Price = styled.h2`
@@ -97,6 +139,10 @@ export const Price = styled.h2`
   position: absolute;
   right: 0;
   top: 48px;
+
+  @media (max-width: 575px) {
+    position: static;
+  }
 `;
 
 export const SaveButton = styled.button`
@@ -115,5 +161,9 @@ export const SaveButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: 575px) {
+    display: none;
   }
 `;
