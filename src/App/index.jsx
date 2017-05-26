@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Sidebar from '../Sidebar';
 import List from '../Products/List';
@@ -13,8 +13,11 @@ const App = () => (
   <Router>
     <AppWrapper>
       <Sidebar />
-      <Route exact path="/" component={List} />
-      <Route path="/item" component={Show} />
+      <Switch>
+        <Route exact path="/products/:category/:group" component={List} />
+        <Route path="/products/:category/:group/:id" component={Show} />
+        <Redirect from="/" to="/products/football/shoes" />
+      </Switch>
     </AppWrapper>
   </Router>
 );

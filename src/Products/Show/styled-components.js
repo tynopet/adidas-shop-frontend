@@ -1,5 +1,26 @@
 import styled from 'styled-components';
 
+export const BuyButton = styled.button`
+  background-image: linear-gradient(to right, ${props => props.color}, #27275d);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: AvenirNextBold;
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 34px;
+  padding-bottom: 36px;
+  position: fixed;
+  bottom: 0;
+  left: 414px;
+  text-transform: uppercase;
+  width: calc(100% - 414px);
+
+  &:focus {
+    outline: none;
+  }
+`;
+
 export const ColorButton = styled.button`
   width: 18px;
   height: 18px;
@@ -54,6 +75,19 @@ export const Model = styled.h1`
   width: 226px;
 `;
 
+export const Preview = styled.img`
+  width: 804px;
+  height: 525px;
+  object-fit: contain;
+`;
+
+export const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 25px;
+`;
+
 export const Price = styled.h2`
   color: #e2e2e2;
   font-family: AvenirNextBold;
@@ -63,13 +97,6 @@ export const Price = styled.h2`
   position: absolute;
   right: 0;
   top: 48px;
-`;
-
-export const PrewiewWrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin-top: 25px;
 `;
 
 export const SaveButton = styled.button`
