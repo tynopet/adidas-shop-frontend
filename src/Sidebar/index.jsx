@@ -1,48 +1,51 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
 import Logo from './Logo';
 import Search from './Search';
 import NavLink from './NavLink';
 import Submenu from './Submenu';
+import { BurgerButton, Container, Nav } from './styled-components';
+import burgerImg from './burger-button.svg';
 
-const Sidebar = styled.aside`
-  min-width: 414px;
-  background-color: #0e0e0e;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: AvenirNextBold;
-  font-size: 24px;
-`;
+class Menu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpened: false,
+    };
 
-const Nav = styled.nav`
-  margin-top: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-export default () => (
-  <Sidebar>
-    <Logo />
-    <Search />
-    <Nav>
-      <Submenu title="football">
-        <NavLink to="/products/football/shoes">SHOES</NavLink>
-        <NavLink to="/products/football/clothing">CLOTHING</NavLink>
-        <NavLink to="/products/football/accesories">ACCESORIES</NavLink>
-      </Submenu>
-      <Submenu title="running">
-        <NavLink to="/products/running/shoes">SHOES</NavLink>
-        <NavLink to="/products/running/clothing">CLOTHING</NavLink>
-        <NavLink to="/products/running/accesories">ACCESORIES</NavLink>
-      </Submenu>
-      <Submenu title="basketball">
-        <NavLink to="/products/basketball/shoes">SHOES</NavLink>
-        <NavLink to="/products/basketball/clothing">CLOTHING</NavLink>
-        <NavLink to="/products/basketball/accesories">ACCESORIES</NavLink>
-      </Submenu>
-    </Nav>
-  </Sidebar>
-);
+  handleClick() {
+    this.setState(state => ({ isOpened: !state.isOpened }));
+  }
+
+  render() {
+    return (
+      <Container>
+        <Logo />
+        <Search />
+        <BurgerButton onClick={this.handleClick}><img src={burgerImg} alt="menu" /></BurgerButton>
+        <Nav isOpened={this.state.isOpened}>
+          <Submenu title="football">
+            <NavLink to="/products/football/shoes">SHOES</NavLink>
+            <NavLink to="/products/football/clothing">CLOTHING</NavLink>
+            <NavLink to="/products/football/accesories">ACCESORIES</NavLink>
+          </Submenu>
+          <Submenu title="running">
+            <NavLink to="/products/running/shoes">SHOES</NavLink>
+            <NavLink to="/products/running/clothing">CLOTHING</NavLink>
+            <NavLink to="/products/running/accesories">ACCESORIES</NavLink>
+          </Submenu>
+          <Submenu title="basketball">
+            <NavLink to="/products/basketball/shoes">SHOES</NavLink>
+            <NavLink to="/products/basketball/clothing">CLOTHING</NavLink>
+            <NavLink to="/products/basketball/accesories">ACCESORIES</NavLink>
+          </Submenu>
+        </Nav>
+      </Container>
+    );
+  }
+}
+
+export default Menu;

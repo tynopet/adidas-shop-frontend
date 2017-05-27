@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import Label from './../Label';
 import Carousel from './Carousel';
 import {
   BuyButton,
@@ -9,11 +8,13 @@ import {
   ColorsWrapper,
   Description,
   FirstWord,
+  FlexContainer,
   Model,
   Preview,
   Wrapper,
   Price,
   SaveButton,
+  StyledLabel as Label,
 } from './styled-components';
 
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
@@ -77,18 +78,20 @@ class Show extends Component {
             <Col lg={12}>
               <Wrapper>
                 <Model>ULTRA BOOST</Model>
-                <SaveButton color={colors[this.state.colorIdx]}>SAVE</SaveButton>
-                <ColorsWrapper>
-                  {colors.map((color, id) => (
-                    <ColorButton
-                      onClick={() => this.handleColorClick(id)}
-                      color={color}
-                      key={color}
-                    />
-                  ))}
-                </ColorsWrapper>
-                <Label isShow>SALE</Label>
                 <Price>$170</Price>
+                <SaveButton color={colors[this.state.colorIdx]}>SAVE</SaveButton>
+                <FlexContainer>
+                  <Label isShow>SALE</Label>
+                  <ColorsWrapper>
+                    {colors.map((color, id) => (
+                      <ColorButton
+                        onClick={() => this.handleColorClick(id)}
+                        color={color}
+                        key={color}
+                      />
+                    ))}
+                  </ColorsWrapper>
+                </FlexContainer>
                 <Preview
                   src={images[this.state.previewIdx].src}
                   alt={images[this.state.previewIdx].alt}

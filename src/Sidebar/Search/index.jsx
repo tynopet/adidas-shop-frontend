@@ -4,6 +4,7 @@ import searchIcon from './search.svg';
 
 const SearchWrapper = styled.div`
   position: relative;
+  display: none;
 
   &::before {
     content: '';
@@ -14,6 +15,10 @@ const SearchWrapper = styled.div`
     position: absolute;
     left: 23px;
     top: 10px;
+  }
+
+  @media (min-width: 576px) {
+    display: block;
   }
 `;
 

@@ -7,6 +7,11 @@ import Show from '../Products/Show';
 
 const AppWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+  }
 `;
 
 const App = () => (

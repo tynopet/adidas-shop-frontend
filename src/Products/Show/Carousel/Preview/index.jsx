@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from './styled-components';
+import { Button, Image } from './styled-components';
 
 const Preview = ({ src, alt, isSelected }) => (
   <Button isSelected={isSelected}>
-    <img src={src} alt={alt} />
+    <Image src={src} alt={alt} />
   </Button>
 );
 
