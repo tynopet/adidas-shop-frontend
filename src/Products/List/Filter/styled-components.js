@@ -8,18 +8,20 @@ export const Container = styled.section`
   font-weight: normal;
   padding: 11px 2rem;
   position: fixed;
-  top: 0;
-  left: 414px;
-  width: calc(100% - 414px);
   border-bottom: 3px solid #e7e7e7;
   background-color: #fff;
   z-index: 1;
 
-  @media (max-width: 575px) {
-    width: 100vw;
-    top: 64px;
-    left: 0;
-    flex-direction: column;
+  width: 100vw;
+  top: 64px;
+  left: 0;
+  flex-direction: column;
+
+  @media (min-width: 576px) {
+    width: calc(100% - 414px);
+    top: 0;
+    left: 414px;
+    flex-direction: row;
   }
 `;
 
@@ -27,9 +29,10 @@ export const Image = styled.img`
   background-color: #ebebeb;
   margin-right: 30px;
   padding: 11px 8px;
+  display: none;
 
-  @media (max-width: 575px) {
-    display: none;
+  @media (min-width: 576px) {
+    display: block;
   }
 `;
 
@@ -42,7 +45,7 @@ export const Button = styled.button`
   color: ${props => (props.selected ? '#4d42f8' : '#d6d6d6')};
   cursor: pointer;
   padding: 0;
-  margin-right: 10px;
+  margin-right: ${props => (props.isGender ? '10px' : '5px')};
 
   &:focus {
     outline: none;
@@ -56,8 +59,8 @@ export const Button = styled.button`
     margin-right: 0;
   }
 
-  @media (max-width: 575px) {
-    margin-right: ${props => (props.isGender ? '10px' : '5px')};
+  @media (min-width: 576px) {
+    margin-right: 10px;
   }
 `;
 
@@ -69,10 +72,10 @@ export const GenderWrapper = styled.div`
 export const SizeWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 72px;
+  margin-left: 0;
 
-  @media (max-width: 575px) {
-    margin-left: 0;
+  @media (min-width: 576px) {
+    margin-left: 72px;
   }
 `;
 

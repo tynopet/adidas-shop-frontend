@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  @media (max-width: 575px) {
-    width: 62px;
-    height: 50px;
+  width: 62px;
+  height: 50px;
+
+  @media (min-width: 576px) {
+    width: auto;
+    height: auto;
     object-fit: contain;
   }
 `;

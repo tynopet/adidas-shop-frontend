@@ -6,11 +6,11 @@ import Filter from './Filter';
 import Shoe from './Shoe';
 
 const Container = styled.main`
-  margin-top: 102px;
+  margin-top: 165px;
   flex: 1;
 
-  @media (max-width: 575px) {
-    margin-top: 165px;
+  @media (min-width: 576px) {
+    margin-top: 102px;
   }
 `;
 
