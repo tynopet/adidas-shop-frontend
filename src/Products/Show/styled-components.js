@@ -114,7 +114,7 @@ export const Preview = styled.img`
   object-fit: contain;
 
   @media (max-width: 575px) {
-    width: 383px;
+    width: calc(100vw - 4rem);
     height: 250px;
   }
 `;
