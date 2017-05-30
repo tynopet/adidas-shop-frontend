@@ -7,4 +7,4 @@ install:
 script:
   - npm run lint
   - now --public --token=$token
-  - now ln
+  - now ln --token=$token
