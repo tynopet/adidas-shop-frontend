@@ -3,8 +3,8 @@ node_js:
   - "node"
 install:
   - npm install
-  - npm install -g now
+  - npm install now
 script:
   - npm run lint
-  - now --public --token=$token
-  - now ln --token=$token
+  - npm run now --public --token=$token
+  - npm run now ln --token=$token
