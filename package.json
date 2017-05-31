@@ -25,8 +25,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src",
-    "prepush": "npm run lint",
-    "deploy": "now --public $token && now ln --token $token"
+    "prepush": "npm run lint"
   },
   "now": {
     "alias": "tynopet-adidas-demo.now.sh"
