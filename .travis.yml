@@ -5,9 +5,8 @@ install:
   - npm install
 script:
   - npm run lint
+before_deploy:
+  - npm install -g now
 deploy:
-  provider: script
-  script:
-    - npm install now
-    - ./node_modules/.bin/now --public --token=$token
-    - ./node_modules/.bin/now ln --token=$token
+  - now --public --token=$token
+  - now ln --token=$token
