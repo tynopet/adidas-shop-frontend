@@ -3,8 +3,11 @@ node_js:
   - "node"
 install:
   - npm install
-  - npm install now
 script:
   - npm run lint
-  - ./node_modules/.bin/now --public --token=$token
-  - ./node_modules/.bin/now ln --token=$token
+deploy:
+  provider: script
+  script:
+    - npm install now
+    - ./node_modules/.bin/now --public --token=$token
+    - ./node_modules/.bin/now ln --token=$token
