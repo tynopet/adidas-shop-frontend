@@ -6,8 +6,5 @@ install:
   - npm install -g now
 script:
   - npm run lint
-deploy:
-  provider: script
-  script:
-    - now --public --token=$token
-    - now ln --token=$token
+  - now --public --token=$token
+  - now ln --token=$token
