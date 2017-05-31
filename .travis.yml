@@ -8,4 +8,4 @@ script:
   - npm run lint
 deploy:
   provider: script
-  script: ./deploy.sh
+  script: ./deploy.sh $token
