@@ -7,12 +7,12 @@ install:
   - npm install
 script:
   - npm run lint
-after_success:
-  provider: script
-  script: npm run publish
-  on:
-    all_branches: true
-  provider: script
-  script: npm run publish
-  on:
-    branch: master
+delpoy:
+  - provider: script
+    script: npm run publish
+    on:
+      all_branches: true
+  - provider: script
+    script: npm run publish
+    on:
+      branch: master
