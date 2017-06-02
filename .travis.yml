@@ -7,5 +7,12 @@ install:
   - npm install
 script:
   - npm run lint
-  - now --public --token=$token
-  - now ln --token=$token
+deploy:
+  provider: script
+  script: npm run publish
+  on:
+    all_branches: true
+  provider: script
+  script: npm run publish
+  on:
+    branch: master
