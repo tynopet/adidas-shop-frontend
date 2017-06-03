@@ -17,6 +17,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.3",
+    "locate-path": "^2.0.0",
     "react-scripts": "^1.0.3"
   },
   "scripts": {
@@ -25,6 +26,11 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src",
-    "prepush": "npm run lint"
+    "prepush": "npm run lint",
+    "deploy": "now --public --token=$token",
+    "add_alias": "now ln --token=$token"
+  },
+  "now": {
+    "alias": "dgudenkov-adidas-demo.now.sh"
   }
 }
