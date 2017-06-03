@@ -17,6 +17,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.3",
+    "locate-path": "^2.0.0",
     "now": "^6.2.5",
     "react-scripts": "^1.0.3"
   },
