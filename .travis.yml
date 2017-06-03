@@ -5,6 +5,8 @@ install:
   - npm install
 script:
   - npm run lint
+before_deploy:
+  - npm run $(npm bin) now -v
 deploy:
   - skip_cleanup: true
   - provider: script
