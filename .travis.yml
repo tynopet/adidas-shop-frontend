@@ -7,10 +7,10 @@ script:
   - npm run lint
 deploy:
   - provider: script
-    script: npm run publish
+    script: npm run deploy
     on:
       all_branches: true
   - provider: script
-    script: npm run publish
+    script: npm run add_alias
     on:
       branch: master
