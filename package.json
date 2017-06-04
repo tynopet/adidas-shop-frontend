@@ -27,5 +27,8 @@
     "eject": "react-scripts eject",
     "lint": "$(npm bin)/eslint src",
     "prepush": "npm run lint"
+  },
+  "now": {
+    "alias": "dgudenkov-adidas-demo.now.sh"
   }
 }
