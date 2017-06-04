@@ -42,7 +42,7 @@ export const Button = styled.button`
   font-family: AvenirNextBold;
   font-size: 24px;
   font-weight: normal;
-  color: ${props => (props.selected ? '#4d42f8' : '#d6d6d6')};
+  color: ${props => (props.isSelected ? '#4d42f8' : '#d6d6d6')};
   cursor: pointer;
   padding: 0;
   margin-right: ${props => (props.isGender ? '10px' : '5px')};

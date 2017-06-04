@@ -18,12 +18,19 @@ const Filter = ({ sizes, onClick, filter }) => (
       <Button type="button">WOMAN</Button>
     </GenderWrapper>
     <SizeWrapper>
-      <SizeTitle onClick={() => onClick(null)}>SIZE</SizeTitle>
-      {sizes.map(size => (
-        <Button type="button" key={size} onClick={() => onClick(size)} selected={size === filter}>
-          {size}
-        </Button>
-      ))}
+      <SizeTitle onClick={() => onClick('*')}>SIZE</SizeTitle>
+      <div>
+        {sizes.map(size => (
+          <Button
+            type="button"
+            key={size}
+            onClick={() => onClick(size)}
+            isSelected={size === filter}
+          >
+            {size}
+          </Button>
+        ))}
+      </div>
     </SizeWrapper>
   </Container>
 );

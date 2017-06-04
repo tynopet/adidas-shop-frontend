@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import 'whatwg-fetch';
 import Filter from './Filter';
 import Shoe from './Shoe';
+import { buildUrl, buildStaticUrl } from './../../helpers';
 
 const Container = styled.main`
   margin-top: 165px;
@@ -14,21 +14,15 @@ const Container = styled.main`
   }
 `;
 
-const buildStaticUrl = ({ id, fileName }, height) =>
-  `http://demandware.edgesuite.net/sits_pod20-adidas/dw/image/v2/aaqx_prd/on/demandware.static/-/Sites-adidas-products/en_US/${id}/zoom/${fileName}?sh=${height}`;
-
-const buildUrl = ({ location }, id) => `${location.pathname}/${id}`;
-
 class List extends Component {
   constructor() {
     super();
     this.state = {
       shoes: [],
-      filter: null,
-      filteredShoes: [],
-      filterSizes: [],
+      filterBySize: '*',
+      sizes: [],
     };
-    this.handleFilterClick = this.handleFilterClick.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentDidMount() {
@@ -52,16 +46,13 @@ class List extends Component {
         }));
         const filterSizes = items
           .reduce((acc, { sizes }) => [...new Set([...acc, ...sizes])], [])
-          .sort();
-        this.setState({ shoes, filterSizes, filteredShoes: shoes });
+          .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+        this.setState({ shoes, sizes: filterSizes });
       });
   }
 
-  handleFilterClick(filter) {
-    this.setState(({ shoes }) => {
-      const filteredShoes = filter ? shoes.filter(({ sizes }) => sizes.includes(filter)) : shoes;
-      return { filteredShoes, filter };
-    });
+  handleFilterChange(filterBySize) {
+    this.setState({ filterBySize });
   }
 
   render() {
@@ -69,22 +60,27 @@ class List extends Component {
       <Container>
         <Grid fluid>
           <Filter
-            filter={this.state.filter || ''}
-            sizes={this.state.filterSizes}
-            onClick={this.handleFilterClick}
+            filter={this.state.filterBySize}
+            sizes={this.state.sizes}
+            onClick={this.handleFilterChange}
           />
           <Row>
-            {this.state.filteredShoes.map(({ id, price, title, image }) => (
-              <Col lg={4} md={4} sm={6} xs={12} key={id}>
-                <Shoe
-                  imageSrc={image}
-                  imageAlt={title}
-                  price={price}
-                  isSale={Math.random() > 0.8}
-                  to={buildUrl(this.props, id)}
-                />
-              </Col>
-            ))}
+            {this.state.shoes
+              .filter(
+                ({ sizes }) =>
+                  (this.state.filterBySize === '*' ? true : sizes.includes(this.state.filterBySize)),
+              )
+              .map(({ id, price, title, image }) => (
+                <Col lg={4} md={4} sm={6} xs={12} key={id}>
+                  <Shoe
+                    imageSrc={image}
+                    imageAlt={title}
+                    price={price}
+                    isSale={Math.random() > 0.8}
+                    to={buildUrl(this.props, id)}
+                  />
+                </Col>
+              ))}
           </Row>
         </Grid>
       </Container>
