@@ -82,4 +82,5 @@ export const SizeWrapper = styled.div`
 export const SizeTitle = styled.span`
   color: #4d42f8;
   margin-right: 18px;
+  cursor: pointer;
 `;

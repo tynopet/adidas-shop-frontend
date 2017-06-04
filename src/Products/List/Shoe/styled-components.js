@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  object-fit: contain;
+  object-fit: cover;
 `;
 
-export const StyledLink = styled(Link) `
+export const StyledLink = styled(Link)`
   position: relative;
   display: flex;
   flex-direction: column;

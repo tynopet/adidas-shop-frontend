@@ -28,19 +28,19 @@ class Menu extends Component {
         <BurgerButton onClick={this.handleClick}><img src={burgerImg} alt="menu" /></BurgerButton>
         <Nav isOpened={this.state.isOpened}>
           <Submenu title="football">
-            <NavLink to="/products/football/shoes">SHOES</NavLink>
-            <NavLink to="/products/football/clothing">CLOTHING</NavLink>
-            <NavLink to="/products/football/accesories">ACCESORIES</NavLink>
+            <NavLink to="/products/football/accessories">ACCESORIES</NavLink>
+            <NavLink to="/products/football/apparel">APPAREL</NavLink>
+            <NavLink to="/products/football/cleats">CLEATS</NavLink>
           </Submenu>
           <Submenu title="running">
             <NavLink to="/products/running/shoes">SHOES</NavLink>
-            <NavLink to="/products/running/clothing">CLOTHING</NavLink>
-            <NavLink to="/products/running/accesories">ACCESORIES</NavLink>
+            <NavLink to="/products/running/apparel">APPAREL</NavLink>
+            <NavLink to="/products/running/accessories">ACCESORIES</NavLink>
           </Submenu>
           <Submenu title="basketball">
             <NavLink to="/products/basketball/shoes">SHOES</NavLink>
-            <NavLink to="/products/basketball/clothing">CLOTHING</NavLink>
-            <NavLink to="/products/basketball/accesories">ACCESORIES</NavLink>
+            <NavLink to="/products/basketball/apparel">APPAREL</NavLink>
+            <NavLink to="/products/basketball/accessories">ACCESORIES</NavLink>
           </Submenu>
         </Nav>
       </Container>
