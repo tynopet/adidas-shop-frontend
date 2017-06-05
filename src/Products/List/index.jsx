@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Filter from './Filter';
 import Shoe from './Shoe';
-import { buildUrl, buildStaticUrl } from './../../helpers';
+import fetchShoes from './../../api';
+import { buildUrl } from './../../helpers';
 
 const Container = styled.main`
   margin-top: 165px;
@@ -19,40 +21,22 @@ class List extends Component {
     super();
     this.state = {
       shoes: [],
-      filterBySize: '*',
+      filterBySize: null,
       sizes: [],
     };
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentDidMount() {
-    this.getData(this.props);
+    fetchShoes(this.props.match).then(state => this.setState(state));
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.getData(nextProps);
+  componentWillReceiveProps({ match }) {
+    fetchShoes(match).then(state => this.setState(state));
   }
 
-  getData({ match }) {
-    fetch(`https://erodionov-adidas-fake-api.now.sh/v1${match.url}`)
-      .then(res => res.json())
-      .then(({ items }) => {
-        const shoes = items.map(({ id, price, title, images, sizes }) => ({
-          id,
-          price: price / 100,
-          title,
-          image: buildStaticUrl(images[0], 512),
-          sizes,
-        }));
-        const filterSizes = items
-          .reduce((acc, { sizes }) => [...new Set([...acc, ...sizes])], [])
-          .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
-        this.setState({ shoes, sizes: filterSizes });
-      });
-  }
-
-  handleFilterChange(filterBySize) {
-    this.setState({ filterBySize });
+  handleFilterChange(filter) {
+    this.setState(state => ({ filterBySize: filter === state.filterBySize ? null : filter }));
   }
 
   render() {
@@ -60,7 +44,7 @@ class List extends Component {
       <Container>
         <Grid fluid>
           <Filter
-            filter={this.state.filterBySize}
+            filter={this.state.filterBySize || ''}
             sizes={this.state.sizes}
             onClick={this.handleFilterChange}
           />
@@ -68,15 +52,15 @@ class List extends Component {
             {this.state.shoes
               .filter(
                 ({ sizes }) =>
-                  (this.state.filterBySize === '*' ? true : sizes.includes(this.state.filterBySize)),
+                  (this.state.filterBySize ? sizes.includes(this.state.filterBySize) : true),
               )
-              .map(({ id, price, title, image }) => (
+              .map(({ id, price, title, image, isSale }) => (
                 <Col lg={4} md={4} sm={6} xs={12} key={id}>
                   <Shoe
                     imageSrc={image}
                     imageAlt={title}
                     price={price}
-                    isSale={Math.random() > 0.8}
+                    isSale={isSale}
                     to={buildUrl(this.props, id)}
                   />
                 </Col>
@@ -87,5 +71,9 @@ class List extends Component {
     );
   }
 }
+
+List.propTypes = {
+  match: PropTypes.shape().isRequired,
+};
 
 export default List;

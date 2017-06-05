@@ -18,7 +18,7 @@ const Filter = ({ sizes, onClick, filter }) => (
       <Button type="button">WOMAN</Button>
     </GenderWrapper>
     <SizeWrapper>
-      <SizeTitle onClick={() => onClick('*')}>SIZE</SizeTitle>
+      <SizeTitle>SIZE</SizeTitle>
       <div>
         {sizes.map(size => (
           <Button
