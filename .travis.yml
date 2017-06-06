@@ -1,7 +1,20 @@
 language: node_js
 node_js:
   - "node"
+cache: yarn
+before_install:
+  - yarn global add now
 install:
-  - npm install
+  - yarn
 script:
-  - npm run lint
+  - yarn lint
+deploy:
+  - skip_cleanup: true
+  - provider: script
+    script: yarn deploy
+    on:
+      all_branches: true
+  - provider: script
+    script: yarn add-alias
+    on:
+      branch: master
