@@ -29,7 +29,7 @@
     "now-start": "serve build/",
     "prepush": "npm run lint",
     "deploy": "now --public --token=$token",
-    "add_alias": "now ln --token=$token"
+    "add-alias": "now ln --token=$token"
   },
   "now": {
     "alias": "dgudenkov-adidas-demo.now.sh"
