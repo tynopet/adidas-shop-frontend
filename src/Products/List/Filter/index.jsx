@@ -38,7 +38,11 @@ const Filter = ({ sizes, onClick, filter }) => (
 Filter.propTypes = {
   sizes: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClick: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.string,
+};
+
+Filter.defaultProps = {
+  filter: null,
 };
 
 export default Filter;

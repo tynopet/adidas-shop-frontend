@@ -3,7 +3,7 @@ export const buildStaticUrl = ({ id, fileName }, height) =>
 
 export const buildUrl = ({ location }, id) => `${location.pathname}/${id}`;
 
-export const transformInputValues = items => items
+export const transformInputArray = items => items
   .map(({ id, price, title, images, sizes }) => ({
     id,
     price: price / 100,
@@ -12,6 +12,13 @@ export const transformInputValues = items => items
     sizes,
     isSale: Math.random() > 0.8,
   }));
+
+export const transformInputValue = ({ price, description, images, title }) => ({
+  title,
+  price: price / 100,
+  images,
+  description,
+});
 
 export const buildSizes = items => items
   .reduce((acc, { sizes }) => [

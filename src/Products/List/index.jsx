@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Filter from './Filter';
 import Shoe from './Shoe';
-import fetchShoes from './../../api';
+import { fetchShoes } from './../../api';
 import { buildUrl } from './../../helpers';
 
 const Container = styled.main`
@@ -36,7 +36,10 @@ class List extends Component {
   }
 
   handleFilterChange(filter) {
-    this.setState(state => ({ filterBySize: filter === state.filterBySize ? null : filter }));
+    this.setState((state) => {
+      const filterBySize = filter === state.filterBySize ? null : filter;
+      return { filterBySize };
+    });
   }
 
   render() {
@@ -44,7 +47,7 @@ class List extends Component {
       <Container>
         <Grid fluid>
           <Filter
-            filter={this.state.filterBySize || ''}
+            filter={this.state.filterBySize}
             sizes={this.state.sizes}
             onClick={this.handleFilterChange}
           />

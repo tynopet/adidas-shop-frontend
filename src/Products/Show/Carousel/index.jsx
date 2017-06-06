@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-flexbox-grid';
 import Preview from './Preview';
 import Container from './styled-components';
+import { buildStaticUrl } from './../../../helpers';
 
 const Carousel = ({ images, onClick, selected }) => (
-  <Row>
-    {images.map(({ id, src, alt }, idx) => (
-      <Col lg={2} key={id} onClick={() => onClick(idx)}>
-        <Container>
-          <Preview src={src} alt={alt} isSelected={id === selected} />
-        </Container>
-      </Col>
+  <Container>
+    {images.map((img, idx) => (
+      <Preview
+        key={img.id}
+        onClick={() => onClick(idx)}
+        src={buildStaticUrl(img, 128)}
+        alt={img.fileName}
+        isSelected={idx === selected}
+      />
     ))}
-  </Row>
+  </Container>
 );
 
 Carousel.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    fileName: PropTypes.string.isRequired,
   })).isRequired,
   onClick: PropTypes.func.isRequired,
   selected: PropTypes.number.isRequired,

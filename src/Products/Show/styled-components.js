@@ -69,9 +69,19 @@ export const ColorsWrapper = styled.span`
   }
 `;
 
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+
+  @media (min-width: 576px) {
+    position: absolute;
+  }
+`;
+
 export const Container = styled.main`
-  margin-bottom: 115px;
-  margin-top: 94px;
+  margin: 94px 15px 115px;
   flex: 1;
 
   @media (min-width: 576px) {
@@ -98,25 +108,21 @@ export const Model = styled.h1`
   line-height: 1;
   margin: 0;
   position: static;
-  left: 0;
-  top: 0;
   width: auto;
 
   @media (min-width: 576px) {
     font-size: 64px;
-    width: 226px;
-    position: absolute;
+    width: 300px;
   }
 `;
 
 export const Preview = styled.img`
-  width: calc(100vw - 4rem);
-  height: 250px;
-  object-fit: contain;
+  object-fit: cover;
+  margin-top: 30px;
+  margin-bottom: 15px;
 
   @media (min-width: 576px) {
-    width: 804px;
-    height: 525px;
+    margin-top: 0;
   }
 `;
 
@@ -124,11 +130,11 @@ export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   position: relative;
-  margin-top: 25px;
   flex-direction: column;
 
   @media (min-width: 576px) {
     flex-direction: row;
+    margin-top: 25px;
   }
 `;
 
@@ -136,7 +142,7 @@ export const Price = styled.h2`
   color: #e2e2e2;
   font-family: AvenirNextBold;
   font-size: 80px;
-  font-weight: bold;
+  font-weight: normal;
   margin: 0;
 
   @media (min-width: 576px) {
@@ -154,9 +160,7 @@ export const SaveButton = styled.button`
   cursor: pointer;
   font-family: AvenirNextBold;
   font-size: 18px;
-  position: absolute;
-  left: 0;
-  top: 156px;
+  margin-top: 15px;
   height: 75px;
   width: 75px;
   display: none;
