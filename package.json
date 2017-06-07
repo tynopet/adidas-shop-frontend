@@ -29,10 +29,11 @@
     "lint": "$(npm bin)/eslint src",
     "now-start": "serve build/",
     "prepush": "npm run lint",
-    "deploy": "now --public --token=$token",
-    "add-alias": "now ln --token=$token"
+    "deploy": "npm run build && now build --public --token=$token",
+    "deploy-with-alias": "npm run deploy && now ln --token=$token"
   },
   "now": {
+    "name": "build",
     "alias": "dgudenkov-adidas-demo.now.sh"
   }
 }

@@ -9,12 +9,13 @@ install:
 script:
   - yarn lint
 deploy:
-  - skip_cleanup: true
   - provider: script
+    skip_cleanup: true
     script: yarn deploy
     on:
       all_branches: true
   - provider: script
-    script: yarn add-alias
+    skip_cleanup: true
+    script: yarn deploy-with-alias
     on:
       branch: master
