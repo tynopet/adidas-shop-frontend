@@ -23,11 +23,13 @@ export const transformInputValue = ({ price, description, images, title }) => ({
 export const buildSizes = items => (
   Object.assign(
     ...items
-      .map(({ sizes }) => (
+      .map(({ sizes }) => (sizes.length ?
         Object.assign(
           ...sizes
-            .map(s => ({ [s]: true })),
-        )
-      )),
+            .map(s => ({ [`${s}`]: true })),
+        ) :
+        {}),
+    ),
   )
 );
+
