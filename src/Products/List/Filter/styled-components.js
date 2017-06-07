@@ -17,14 +17,14 @@ export const Container = styled.section`
   left: 0;
   flex-direction: column;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     width: calc(100% - 327px);
     top: 0;
     left: 327px;
     flex-direction: row;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     width: calc(100% - 414px);
     left: 414px;
   }
@@ -56,16 +56,18 @@ export const Button = styled.button`
     outline: none;
   }
 
-  &:hover {
-    color: #4d42f8;
-  }
-
   &:last-child {
     margin-right: 0;
   }
 
   @media (min-width: 576px) {
     margin-right: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      color: #4d42f8;
+    }
   }
 `;
 
@@ -78,18 +80,23 @@ export const SizeWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-left: 0;
-
-  @media (min-width: 576px) {
-    margin-left: 50px;
-  }
-
-  @media (min-width: 768px) {
-    margin-left: 72px;
-  }
+  position: relative;
 `;
 
 export const SizeTitle = styled.span`
   color: #4d42f8;
   margin-right: 18px;
   cursor: pointer;
+`;
+
+export const ModalWrapper = styled.div`
+  display: ${props => (props.isShow ? 'flex' : 'none')};
+  flex-wrap: wrap;
+  position: absolute;
+  top: 3rem;
+  left: 0px;
+  background-color: #fff;
+  border: 5px solid #f4f4f4;
+  padding: 1rem;
+  width: calc(100% - 5rem);
 `;

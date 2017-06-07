@@ -1,14 +1,7 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  width: 62px;
-  height: 50px;
   object-fit: cover;
-
-  @media (min-width: 576px) {
-    width: auto;
-    height: auto;
-  }
 `;
 
 export const Button = styled.button`
