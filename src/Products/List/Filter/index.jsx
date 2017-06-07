@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   Image,
@@ -9,7 +10,7 @@ import {
 } from './styled-components';
 import filterIcon from './filter.png';
 
-export default () => (
+const Filter = ({ sizes, onClick }) => (
   <Container>
     <Image src={filterIcon} alt="filter" />
     <GenderWrapper>
@@ -18,13 +19,29 @@ export default () => (
     </GenderWrapper>
     <SizeWrapper>
       <SizeTitle>SIZE</SizeTitle>
-      <Button type="button">36</Button>
-      <Button type="button">37</Button>
-      <Button type="button">38</Button>
-      <Button type="button">39</Button>
-      <Button type="button">40</Button>
-      <Button type="button" selected>41</Button>
-      <Button type="button">42</Button>
+      <div>
+        {Object.entries(sizes).map(([size, isSelected]) => (
+          <Button
+            type="button"
+            key={size}
+            onClick={() => onClick(size)}
+            isSelected={isSelected}
+          >
+            {size}
+          </Button>
+        ))}
+      </div>
     </SizeWrapper>
   </Container>
 );
+
+Filter.propTypes = {
+  sizes: PropTypes.shape().isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
+Filter.defaultProps = {
+  filter: null,
+};
+
+export default Filter;

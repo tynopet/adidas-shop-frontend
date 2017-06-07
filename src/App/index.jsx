@@ -21,7 +21,7 @@ const App = () => (
       <Switch>
         <Route exact path="/products/:category/:group" component={List} />
         <Route path="/products/:category/:group/:id" component={Show} />
-        <Redirect from="/" to="/products/football/shoes" />
+        <Redirect from="/" to="/products/football/accessories" />
       </Switch>
     </AppWrapper>
   </Router>

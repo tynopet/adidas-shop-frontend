@@ -18,10 +18,15 @@ export const Container = styled.section`
   flex-direction: column;
 
   @media (min-width: 576px) {
-    width: calc(100% - 414px);
+    width: calc(100% - 327px);
     top: 0;
-    left: 414px;
+    left: 327px;
     flex-direction: row;
+  }
+
+  @media (min-width: 768px) {
+    width: calc(100% - 414px);
+    left: 414px;
   }
 `;
 
@@ -42,7 +47,7 @@ export const Button = styled.button`
   font-family: AvenirNextBold;
   font-size: 24px;
   font-weight: normal;
-  color: ${props => (props.selected ? '#4d42f8' : '#d6d6d6')};
+  color: ${props => (props.isSelected ? '#4d42f8' : '#d6d6d6')};
   cursor: pointer;
   padding: 0;
   margin-right: ${props => (props.isGender ? '10px' : '5px')};
@@ -75,6 +80,10 @@ export const SizeWrapper = styled.div`
   margin-left: 0;
 
   @media (min-width: 576px) {
+    margin-left: 50px;
+  }
+
+  @media (min-width: 768px) {
     margin-left: 72px;
   }
 `;
@@ -82,4 +91,5 @@ export const SizeWrapper = styled.div`
 export const SizeTitle = styled.span`
   color: #4d42f8;
   margin-right: 18px;
+  cursor: pointer;
 `;
