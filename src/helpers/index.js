@@ -20,16 +20,14 @@ export const transformInputValue = ({ price, description, images, title }) => ({
   description,
 });
 
-export const buildSizes = items => (
-  Object.assign(
-    ...items
-      .map(({ sizes }) => (sizes.length ?
-        Object.assign(
-          ...sizes
-            .map(s => ({ [`${s}`]: true })),
-        ) :
-        {}),
-    ),
-  )
-);
+export const collectInputSizes = items => ({
+  ...items
+    .reduce((acc, { sizes }) => (
+      {
+        ...acc,
+        ...sizes.reduce((a, s) => ({
+          ...a, [`${s}`]: true,
+        }), {}),
+      }), {}),
+});
 
