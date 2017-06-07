@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  object-fit: cover;
+  width: 100%;
 `;
 
 export const StyledLink = styled(Link)`
