@@ -15,6 +15,6 @@ deploy:
     on:
       all_branches: true
   - provider: script
-    script: yarn add-alias
+    script: yarn deploy-with-alias
     on:
       branch: master
