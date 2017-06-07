@@ -20,7 +20,7 @@ export const Button = styled.button`
     outline: none;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-right: 15px;
   }
 `;

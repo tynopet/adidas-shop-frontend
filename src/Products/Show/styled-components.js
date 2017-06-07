@@ -89,7 +89,7 @@ export const Container = styled.main`
   margin: 94px 15px 115px;
   flex: 1;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 0;
   }
 `;

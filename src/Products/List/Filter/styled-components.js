@@ -36,7 +36,7 @@ export const Image = styled.img`
   padding: 11px 8px;
   display: none;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     display: block;
   }
 `;
@@ -60,7 +60,7 @@ export const Button = styled.button`
     margin-right: 0;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-right: 10px;
   }
 

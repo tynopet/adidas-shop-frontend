@@ -9,7 +9,7 @@ const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 `;

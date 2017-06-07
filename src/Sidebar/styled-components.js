@@ -33,13 +33,13 @@ export const BurgerButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-right: 15px;
+  margin-right: 25px;
 
   &:focus {
     outline: none;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -58,7 +58,7 @@ export const Nav = styled.nav`
   justify-content: flex-start;
   padding-top: 100px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 150px;
     display: flex;
     justify-content: center;

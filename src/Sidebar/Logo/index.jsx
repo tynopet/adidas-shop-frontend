@@ -9,7 +9,7 @@ const LogoWrapper = styled(Link)`
   text-align: center;
   margin: 17px 15px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 50px;
     margin-bottom: 30px;
   }

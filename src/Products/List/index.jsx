@@ -11,7 +11,7 @@ const Container = styled.main`
   margin-top: 165px;
   flex: 1;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 102px;
   }
 `;
