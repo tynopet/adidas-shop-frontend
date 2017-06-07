@@ -21,8 +21,7 @@ class List extends Component {
     super();
     this.state = {
       shoes: [],
-      filterBySize: null,
-      sizes: [],
+      sizes: {},
     };
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
@@ -37,8 +36,12 @@ class List extends Component {
 
   handleFilterChange(filter) {
     this.setState((state) => {
-      const filterBySize = filter === state.filterBySize ? null : filter;
-      return { filterBySize };
+      const sizes = Object.assign(
+        {},
+        state.sizes,
+        { [filter]: !state.sizes[filter] },
+      );
+      return { sizes };
     });
   }
 
@@ -47,16 +50,12 @@ class List extends Component {
       <Container>
         <Grid fluid>
           <Filter
-            filter={this.state.filterBySize}
             sizes={this.state.sizes}
             onClick={this.handleFilterChange}
           />
           <Row>
             {this.state.shoes
-              .filter(
-                ({ sizes }) =>
-                  (this.state.filterBySize ? sizes.includes(this.state.filterBySize) : true),
-              )
+              .filter(({ sizes }) => sizes.filter(s => this.state.sizes[s]).length)
               .map(({ id, price, title, image, isSale }) => (
                 <Col lg={4} md={4} sm={6} xs={12} key={id}>
                   <Shoe

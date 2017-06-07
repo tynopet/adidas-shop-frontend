@@ -20,12 +20,14 @@ export const transformInputValue = ({ price, description, images, title }) => ({
   description,
 });
 
-export const buildSizes = items => items
-  .reduce((acc, { sizes }) => [
-    ...new Set(
-      [...acc, ...sizes],
-    )],
-  [])
-  .sort((a, b) => a.localeCompare(
-    b, 'en', { numeric: true }),
-  );
+export const buildSizes = items => (
+  Object.assign(
+    ...items
+      .map(({ sizes }) => (
+        Object.assign(
+          ...sizes
+            .map(s => ({ [s]: true })),
+        )
+      )),
+  )
+);

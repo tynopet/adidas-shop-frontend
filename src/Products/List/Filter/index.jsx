@@ -10,7 +10,7 @@ import {
 } from './styled-components';
 import filterIcon from './filter.png';
 
-const Filter = ({ sizes, onClick, filter }) => (
+const Filter = ({ sizes, onClick }) => (
   <Container>
     <Image src={filterIcon} alt="filter" />
     <GenderWrapper>
@@ -20,12 +20,12 @@ const Filter = ({ sizes, onClick, filter }) => (
     <SizeWrapper>
       <SizeTitle>SIZE</SizeTitle>
       <div>
-        {sizes.map(size => (
+        {Object.entries(sizes).map(([size, selected]) => (
           <Button
             type="button"
             key={size}
             onClick={() => onClick(size)}
-            isSelected={size === filter}
+            isSelected={selected}
           >
             {size}
           </Button>
@@ -36,9 +36,8 @@ const Filter = ({ sizes, onClick, filter }) => (
 );
 
 Filter.propTypes = {
-  sizes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sizes: PropTypes.shape().isRequired,
   onClick: PropTypes.func.isRequired,
-  filter: PropTypes.string,
 };
 
 Filter.defaultProps = {

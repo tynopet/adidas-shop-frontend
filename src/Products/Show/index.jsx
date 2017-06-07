@@ -8,7 +8,6 @@ import {
   ColorsWrapper,
   Column,
   Description,
-  // FirstWord,
   FlexContainer,
   Model,
   Preview,
