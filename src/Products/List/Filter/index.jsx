@@ -20,12 +20,12 @@ const Filter = ({ sizes, onClick }) => (
     <SizeWrapper>
       <SizeTitle>SIZE</SizeTitle>
       <div>
-        {Object.entries(sizes).map(([size, selected]) => (
+        {Object.entries(sizes).map(([size, isSelected]) => (
           <Button
             type="button"
             key={size}
             onClick={() => onClick(size)}
-            isSelected={selected}
+            isSelected={isSelected}
           >
             {size}
           </Button>
