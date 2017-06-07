@@ -17,10 +17,15 @@ export const Container = styled.aside`
     height: auto;
     min-height: 100vh;
     flex-direction: column;
-    min-width: 414px;
-    width: 414px;
+    min-width: 327px;
+    width: 327px;
     position: static;
     justify-content: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 414px;
+    width: 414px;
   }
 `;
 
