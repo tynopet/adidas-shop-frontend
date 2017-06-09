@@ -28,7 +28,6 @@ export const calcFilterLength = () => (window.outerWidth > 1024 ? 10 : 5);
 export const isShowExpander = object => Object.keys(object).length > calcFilterLength();
 
 export const compareSizes = (a, b) => {
-  // Не знаю как упростить сильнее функцию сортировки, поэтому оставлю комментарии
   const sizes = [
     'XXXS',
     'XXXS/XXS',
@@ -56,23 +55,22 @@ export const compareSizes = (a, b) => {
     'XXL/XXXL',
     'XXXL',
   ];
-  // Сначала ищем оба размера в массиве размеров
+  // First, we look for both sizes in an array of sizes
   const aIdx = sizes.indexOf(a.toUpperCase());
   const bIdx = sizes.indexOf(b.toUpperCase());
-  // Если не нашли оба размера в массиве и оба размера число - обычное сравнение чисел
+  // If not find both sizes in the array and both sizes is number - prime comparison numbers
   if ((aIdx < 0 && bIdx < 0) && (!isNaN(a) && !isNaN(b))) {
     return a - b;
   }
-  // Если не найден какой-либо из размеров, и он является числом
-  // - то числовой размер меньше символьного
-  // Если оба размера символьные, и их нет в массиве - второй считается большим
+  // If not find any size, and he is number - number size less string
+  // If both sizes is string, and their not in array - second large
   if (aIdx < 0) {
     return !isNaN(a) ? -1 : 1;
   }
   if (bIdx < 0) {
     return !isNaN(b) ? -1 : 1;
   }
-  // Если размеры нашлись в массиве, то сравниваем их по индексу
+  // If sizes in array - comparison by index
   return aIdx - bIdx;
 };
 

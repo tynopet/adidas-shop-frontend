@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Filter from './Filter';
 import Shoe from './Shoe';
-import { fetchShoes } from './../../api';
+import { fetchProducts } from './../../api';
 import { buildUrl, buildStaticUrl } from './../../helpers';
 
 const Container = styled.main`
@@ -20,18 +20,18 @@ class List extends Component {
   constructor() {
     super();
     this.state = {
-      shoes: [],
+      products: [],
       sizes: {},
     };
     this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   componentDidMount() {
-    fetchShoes(this.props.match).then(state => this.setState(state));
+    fetchProducts(this.props.match.url).then(state => this.setState(state));
   }
 
   componentWillReceiveProps({ match }) {
-    fetchShoes(match).then(state => this.setState(state));
+    fetchProducts(match.url).then(state => this.setState(state));
   }
 
   handleFilterChange(filter) {
@@ -54,7 +54,7 @@ class List extends Component {
             onClick={this.handleFilterChange}
           />
           <Row>
-            {this.state.shoes
+            {this.state.products
               .filter(({ sizes }) => sizes.filter(s => this.state.sizes[s]).length)
               .map(({ id, price, title, images, isSale }) => (
                 <Col lg={4} md={4} sm={6} xs={12} key={id}>

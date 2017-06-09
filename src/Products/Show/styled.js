@@ -128,7 +128,7 @@ export const Preview = styled.img`
   align-self: center;
   width: 100%;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     margin-top: 0;
     width: auto;
   }

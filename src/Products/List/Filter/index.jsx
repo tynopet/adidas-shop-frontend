@@ -10,10 +10,10 @@ class Filter extends Component {
     this.state = {
       showSizes: false,
     };
-    this.handleExpanderClick = this.handleExpanderClick.bind(this);
+    this.handleDropdownClick = this.handleDropdownClick.bind(this);
   }
 
-  handleExpanderClick() {
+  handleDropdownClick() {
     this.setState(prevState => ({ showSizes: !prevState.showSizes }));
   }
 
@@ -35,7 +35,7 @@ class Filter extends Component {
                 {size}
               </Button>
             ))}
-          {isShowExpander(this.props.sizes) && <Button type="button" onClick={this.handleExpanderClick}>{'>>'}</Button>}
+          {isShowExpander(this.props.sizes) && <Button type="button" onClick={this.handleDropdownClick}>{'>>'}</Button>}
           <ModalWrapper isShow={this.state.showSizes}>
             {sortFilter(this.props.sizes)
               .slice(calcFilterLength())
