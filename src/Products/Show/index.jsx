@@ -15,9 +15,9 @@ import {
   Price,
   SaveButton,
   StyledLabel as Label,
-} from './styled-components';
+} from './styled';
 import { fetchShoe } from './../../api';
-import { buildStaticUrl, calcImageSize } from './../../helpers';
+import { buildStaticUrl } from './../../helpers';
 
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
@@ -71,7 +71,7 @@ class Show extends Component {
             </ColorsWrapper>
           </FlexContainer>
           {this.state.images.length && <Preview
-            src={buildStaticUrl(this.state.images[this.state.previewIdx], calcImageSize('show'))}
+            src={buildStaticUrl(this.state.images[this.state.previewIdx], 768)}
             alt={this.state.title}
           />}
         </Wrapper>

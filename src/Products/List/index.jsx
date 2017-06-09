@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Filter from './Filter';
 import Shoe from './Shoe';
 import { fetchShoes } from './../../api';
-import { buildUrl } from './../../helpers';
+import { buildUrl, buildStaticUrl } from './../../helpers';
 
 const Container = styled.main`
   margin-top: 165px;
@@ -35,11 +35,11 @@ class List extends Component {
   }
 
   handleFilterChange(filter) {
-    this.setState((state) => {
+    this.setState((prevState) => {
       const sizes = Object.assign(
         {},
-        state.sizes,
-        { [filter]: !state.sizes[filter] },
+        prevState.sizes,
+        { [filter]: !prevState.sizes[filter] },
       );
       return { sizes };
     });
@@ -56,10 +56,10 @@ class List extends Component {
           <Row>
             {this.state.shoes
               .filter(({ sizes }) => sizes.filter(s => this.state.sizes[s]).length)
-              .map(({ id, price, title, image, isSale }) => (
+              .map(({ id, price, title, images, isSale }) => (
                 <Col lg={4} md={4} sm={6} xs={12} key={id}>
                   <Shoe
-                    imageSrc={image}
+                    imageSrc={buildStaticUrl(images[0], 512)}
                     imageAlt={title}
                     price={price}
                     isSale={isSale}

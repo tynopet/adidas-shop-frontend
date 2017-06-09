@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Label from './../Label';
 
-export const StyledLabel = styled(Label)`
+export const StyledLabel = styled(Label) `
   position: static;
   
   @media (min-width: 1024px) {
@@ -125,9 +125,12 @@ export const Preview = styled.img`
   object-fit: cover;
   margin-top: 30px;
   margin-bottom: 15px;
+  align-self: center;
+  width: 100%;
 
   @media (min-width: 1024px) {
     margin-top: 0;
+    width: auto;
   }
 `;
 

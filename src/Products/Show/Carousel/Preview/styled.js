@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 export const Image = styled.img`
   object-fit: cover;
+  width: 64px;
+  height: 64px;
+
+  @media (min-width: 1024px) {
+    width: auto;
+    height: auto;
+  }
 `;
 
 export const Button = styled.button`

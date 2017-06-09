@@ -3,35 +3,14 @@ export const buildStaticUrl = ({ id, fileName }, height) =>
 
 export const buildUrl = ({ location }, id) => `${location.pathname}/${id}`;
 
-export const calcImageSize = (category) => {
-  const windowWidth = window.outerWidth;
-  switch (category) {
-    case 'list':
-      return windowWidth > 1024 ? 512 : 256;
-    case 'show':
-      return windowWidth > 1024 ? 768 : 256;
-    case 'carousel':
-      return windowWidth > 1024 ? 128 : 64;
-    default:
-      return 512;
-  }
-};
-
-export const transformInputArray = items => items
-  .map(({ id, price, title, images, sizes }) => ({
-    id,
-    price: price / 100,
-    title,
-    image: buildStaticUrl(images[0], calcImageSize('list')),
-    sizes,
-    isSale: Math.random() > 0.8,
-  }));
-
-export const transformInputValue = ({ price, description, images, title }) => ({
-  title,
+export const transformInputValues = ({ id, price, title, description, images, sizes }) => ({
+  id,
   price: price / 100,
+  title,
   images,
+  sizes,
   description,
+  isSale: Math.random() > 0.8,
 });
 
 export const collectInputSizes = items => ({
@@ -46,8 +25,10 @@ export const collectInputSizes = items => ({
 });
 
 export const calcFilterLength = () => (window.outerWidth > 1024 ? 10 : 5);
+export const isShowExpander = object => Object.keys(object).length > calcFilterLength();
 
-export const sortSizes = (a, b) => {
+export const compareSizes = (a, b) => {
+  // Не знаю как упростить сильнее функцию сортировки, поэтому оставлю комментарии
   const sizes = [
     'XXXS',
     'XXXS/XXS',
@@ -75,25 +56,27 @@ export const sortSizes = (a, b) => {
     'XXL/XXXL',
     'XXXL',
   ];
-
+  // Сначала ищем оба размера в массиве размеров
   const aIdx = sizes.indexOf(a.toUpperCase());
   const bIdx = sizes.indexOf(b.toUpperCase());
-
+  // Если не нашли оба размера в массиве и оба размера число - обычное сравнение чисел
+  if ((aIdx < 0 && bIdx < 0) && (!isNaN(a) && !isNaN(b))) {
+    return a - b;
+  }
+  // Если не найден какой-либо из размеров, и он является числом - то числовой размер меньше символьного
+  // Если оба размера символьные, и их нет в массиве - второй считается большим
   if (aIdx < 0) {
-    if (!isNaN(a) && !isNaN(b)) {
-      return Number(a) - Number(b);
-    }
     return !isNaN(a) ? -1 : 1;
   }
   if (bIdx < 0) {
-    if (!isNaN(a) && !isNaN(b)) {
-      return Number(a) - Number(b);
-    }
     return !isNaN(b) ? -1 : 1;
   }
+  // Если размеры нашлись в массиве, то сравниваем их по индексу
   return aIdx - bIdx;
 };
 
 export const sortObjectByKeys = obj => Object.keys(obj)
-  .sort(sortSizes)
+  .sort(compareSizes)
   .reduce((prev, key) => ({ ...prev, [key]: obj[key] }), {});
+
+export const sortFilter = filter => Object.entries(sortObjectByKeys(filter));

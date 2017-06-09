@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Preview from './Preview';
-import Container from './styled-components';
-import { buildStaticUrl, calcImageSize } from './../../../helpers';
+import Container from './styled';
+import { buildStaticUrl } from './../../../helpers';
 
 const Carousel = ({ images, onClick, selected }) => (
   <Container>
@@ -10,7 +10,7 @@ const Carousel = ({ images, onClick, selected }) => (
       <Preview
         key={img.id}
         onClick={() => onClick(idx)}
-        src={buildStaticUrl(img, calcImageSize('carousel'))}
+        src={buildStaticUrl(img, 128)}
         alt={img.fileName}
         isSelected={idx === selected}
       />

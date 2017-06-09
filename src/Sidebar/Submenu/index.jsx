@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Container, Wrapper } from './styled-components';
+import { Button, Container, Wrapper } from './styled';
 
 class Submenu extends Component {
   constructor() {
@@ -12,7 +12,7 @@ class Submenu extends Component {
   }
 
   handleClick() {
-    this.setState(state => ({ isOpen: !state.isOpen }));
+    this.setState(prevState => ({ isOpen: !prevState.isOpen }));
   }
 
   render() {

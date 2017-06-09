@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Image, SizeWrapper, SizeTitle, Button, ModalWrapper } from './styled-components';
+import { Container, Image, SizeWrapper, SizeTitle, Button, ModalWrapper } from './styled';
 import filterIcon from './filter.png';
-import { calcFilterLength, sortObjectByKeys } from './../../../helpers';
+import { calcFilterLength, sortFilter, isShowExpander } from './../../../helpers';
 
 class Filter extends Component {
   constructor(props) {
@@ -10,11 +10,11 @@ class Filter extends Component {
     this.state = {
       showSizes: false,
     };
-    this.handleShowClick = this.handleShowClick.bind(this);
+    this.handleExpanderClick = this.handleExpanderClick.bind(this);
   }
 
-  handleShowClick() {
-    this.setState(state => ({ showSizes: !state.showSizes }));
+  handleExpanderClick() {
+    this.setState(prevState => ({ showSizes: !prevState.showSizes }));
   }
 
   render() {
@@ -23,7 +23,7 @@ class Filter extends Component {
         <Image src={filterIcon} alt="filter" />
         <SizeWrapper>
           <SizeTitle>SIZE</SizeTitle>
-          {Object.entries(sortObjectByKeys(this.props.sizes))
+          {sortFilter(this.props.sizes)
             .slice(0, calcFilterLength())
             .map(([size, isSelected]) => (
               <Button
@@ -34,10 +34,10 @@ class Filter extends Component {
               >
                 {size}
               </Button>
-          ))}
-          {Object.keys(this.props.sizes).length > calcFilterLength() && <Button type="button" onClick={this.handleShowClick}>{'>>'}</Button>}
+            ))}
+          {isShowExpander(this.props.sizes) && <Button type="button" onClick={this.handleExpanderClick}>{'>>'}</Button>}
           <ModalWrapper isShow={this.state.showSizes}>
-            {Object.entries(sortObjectByKeys(this.props.sizes))
+            {sortFilter(this.props.sizes)
               .slice(calcFilterLength())
               .map(([size, isSelected]) => (
                 <Button
@@ -48,7 +48,7 @@ class Filter extends Component {
                 >
                   {size}
                 </Button>
-            ))}
+              ))}
           </ModalWrapper>
         </SizeWrapper>
       </Container>

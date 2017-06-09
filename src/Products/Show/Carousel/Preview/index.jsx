@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Image } from './styled-components';
+import { Button, Image } from './styled';
 
 const Preview = ({ src, alt, isSelected, onClick }) => (
   <Button isSelected={isSelected} onClick={onClick}>
