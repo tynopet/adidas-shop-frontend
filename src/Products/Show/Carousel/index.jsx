@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Preview from './Preview';
-import Container from './styled-components';
+import Container from './styled';
 import { buildStaticUrl } from './../../../helpers';
 
 const Carousel = ({ images, onClick, selected }) => (

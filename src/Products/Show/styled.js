@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Label from './../Label';
 
-export const StyledLabel = styled(Label)`
+export const StyledLabel = styled(Label) `
   position: static;
   
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     position: absolute;
   }
 `;
@@ -35,9 +35,14 @@ export const BuyButton = styled.button`
     outline: none;
   }
 
-  @media (min-width: 576px) {
-    left: 414px;
+  @media (min-width: 768px) {
+    left: 327px;
     font-size: 32px;
+    width: calc(100% - 327px);
+  }
+
+  @media (min-width: 1024px) {
+    left: 414px;
     width: calc(100% - 414px);
   }  
 `;
@@ -61,7 +66,7 @@ export const ColorButton = styled.button`
 `;
 
 export const ColorsWrapper = styled.span`
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     position: absolute;
     right: 142px;
     top: 0;
@@ -75,7 +80,7 @@ export const Column = styled.div`
   top: 0;
   left: 0;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     position: absolute;
   }
 `;
@@ -84,7 +89,7 @@ export const Container = styled.main`
   margin: 94px 15px 115px;
   flex: 1;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 0;
   }
 `;
@@ -110,7 +115,7 @@ export const Model = styled.h1`
   position: static;
   width: auto;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     font-size: 64px;
     width: 300px;
   }
@@ -120,9 +125,12 @@ export const Preview = styled.img`
   object-fit: cover;
   margin-top: 30px;
   margin-bottom: 15px;
+  align-self: center;
+  width: 100%;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1200px) {
     margin-top: 0;
+    width: auto;
   }
 `;
 
@@ -132,7 +140,7 @@ export const Wrapper = styled.section`
   position: relative;
   flex-direction: column;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     flex-direction: row;
     margin-top: 25px;
   }
@@ -145,7 +153,7 @@ export const Price = styled.h2`
   font-weight: normal;
   margin: 0;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     position: absolute;
     right: 0;
     top: 48px;
@@ -169,7 +177,7 @@ export const SaveButton = styled.button`
     outline: none;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     display: inline;
   }
 `;

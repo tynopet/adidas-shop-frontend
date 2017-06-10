@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Label from './../../Label';
-import { Image, StyledLink as Link, Price } from './styled-components';
+import { Image, StyledLink as Link, Price } from './styled';
 
 const Shoe = ({ imageSrc, imageAlt, isSale, price, to }) => (
   <Link to={to}>

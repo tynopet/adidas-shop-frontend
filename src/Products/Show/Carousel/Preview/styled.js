@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Image = styled.img`
-  width: 62px;
-  height: 50px;
   object-fit: cover;
+  width: 64px;
+  height: 64px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 1024px) {
     width: auto;
     height: auto;
   }
@@ -27,7 +27,7 @@ export const Button = styled.button`
     outline: none;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-right: 15px;
   }
 `;

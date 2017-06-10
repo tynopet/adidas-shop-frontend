@@ -13,17 +13,17 @@ export const Container = styled.aside`
   flex-direction: row;
   justify-content: space-between;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     height: auto;
     min-height: 100vh;
     flex-direction: column;
-    min-width: 327px;
-    width: 327px;
     position: static;
     justify-content: flex-start;
+    min-width: 327px;
+    width: 327px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     min-width: 414px;
     width: 414px;
   }
@@ -33,13 +33,13 @@ export const BurgerButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-right: 15px;
+  margin-right: 25px;
 
   &:focus {
     outline: none;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -58,7 +58,7 @@ export const Nav = styled.nav`
   justify-content: flex-start;
   padding-top: 100px;
 
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     margin-top: 150px;
     display: flex;
     justify-content: center;

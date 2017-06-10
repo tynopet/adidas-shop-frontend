@@ -3,7 +3,7 @@ import Logo from './Logo';
 import Search from './Search';
 import NavLink from './NavLink';
 import Submenu from './Submenu';
-import { BurgerButton, Container, Nav } from './styled-components';
+import { BurgerButton, Container, Nav } from './styled';
 import burgerImg from './burger-button.svg';
 
 class Menu extends Component {
@@ -17,7 +17,7 @@ class Menu extends Component {
   }
 
   handleClick() {
-    this.setState(state => ({ isOpened: !state.isOpened }));
+    this.setState(prevState => ({ isOpened: !prevState.isOpened }));
   }
 
   render() {

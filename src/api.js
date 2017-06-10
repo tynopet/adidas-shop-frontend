@@ -1,13 +1,13 @@
-import { transformInputArray, transformInputValue, collectInputSizes } from './helpers';
+import { transformInputValues, collectInputSizes } from './helpers';
 
-export const fetchShoes = match => fetch(`https://erodionov-adidas-fake-api.now.sh/v1${match.url}`)
+export const fetchProducts = url => fetch(`https://erodionov-adidas-fake-api.now.sh/v1${url}`)
   .then(res => res.json())
   .then(({ items }) => {
-    const shoes = transformInputArray(items);
-    const filterSizes = collectInputSizes(items);
-    return { shoes, sizes: filterSizes };
+    const products = items.map(transformInputValues);
+    const sizes = collectInputSizes(items);
+    return { products, sizes };
   });
 
-export const fetchShoe = match => fetch(`https://erodionov-adidas-fake-api.now.sh/v1${match.url}`)
+export const fetchProduct = url => fetch(`https://erodionov-adidas-fake-api.now.sh/v1${url}`)
   .then(res => res.json())
-  .then(shoe => transformInputValue(shoe));
+  .then(shoe => transformInputValues(shoe));

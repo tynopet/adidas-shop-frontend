@@ -15,8 +15,8 @@ import {
   Price,
   SaveButton,
   StyledLabel as Label,
-} from './styled-components';
-import { fetchShoe } from './../../api';
+} from './styled';
+import { fetchProduct } from './../../api';
 import { buildStaticUrl } from './../../helpers';
 
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
@@ -37,7 +37,7 @@ class Show extends Component {
   }
 
   componentDidMount() {
-    fetchShoe(this.props.match)
+    fetchProduct(this.props.match.url)
       .then(res => this.setState(res));
   }
 
