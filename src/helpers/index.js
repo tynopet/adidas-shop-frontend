@@ -79,3 +79,10 @@ export const sortObjectByKeys = obj => Object.keys(obj)
   .reduce((prev, key) => ({ ...prev, [key]: obj[key] }), {});
 
 export const sortFilter = filter => Object.entries(sortObjectByKeys(filter));
+
+export const searchFilter = (text, match) => {
+  if (text.length && match.length) {
+    return (text.toUpperCase().indexOf(match.toUpperCase()) >= 0);
+  }
+  return true;
+};

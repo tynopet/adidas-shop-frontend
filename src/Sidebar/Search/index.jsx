@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import searchIcon from './search.svg';
 
@@ -40,8 +41,14 @@ const SearchInput = styled.input`
   }
 `;
 
-export default () => (
+const Search = ({ onChange }) => (
   <SearchWrapper>
-    <SearchInput type="text" />
+    <SearchInput type="text" onChange={onChange} />
   </SearchWrapper>
 );
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
+
+export default Search;

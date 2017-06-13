@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Filter from './Filter';
 import Shoe from './Shoe';
 import { fetchProducts } from './../../api';
-import { buildUrl, buildStaticUrl } from './../../helpers';
+import { buildUrl, buildStaticUrl, searchFilter } from './../../helpers';
 
 const Container = styled.main`
   margin-top: 165px;
@@ -31,7 +31,9 @@ class List extends Component {
   }
 
   componentWillReceiveProps({ match }) {
-    fetchProducts(match.url).then(state => this.setState(state));
+    if (this.props.match.url !== match.url) {
+      fetchProducts(match.url).then(state => this.setState(state));
+    }
   }
 
   handleFilterChange(filter) {
@@ -56,6 +58,7 @@ class List extends Component {
           <Row>
             {this.state.products
               .filter(({ sizes }) => sizes.filter(s => this.state.sizes[s]).length)
+              .filter(({ title }) => searchFilter(title, this.props.search))
               .map(({ id, price, title, images, isSale }) => (
                 <Col lg={4} md={4} sm={6} xs={12} key={id}>
                   <Shoe
@@ -76,6 +79,7 @@ class List extends Component {
 
 List.propTypes = {
   match: PropTypes.shape().isRequired,
+  search: PropTypes.string.isRequired,
 };
 
 export default List;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Logo from './Logo';
 import Search from './Search';
 import NavLink from './NavLink';
@@ -7,8 +8,8 @@ import { BurgerButton, Container, Nav } from './styled';
 import burgerImg from './burger-button.svg';
 
 class Menu extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isOpened: false,
     };
@@ -24,7 +25,7 @@ class Menu extends Component {
     return (
       <Container>
         <Logo />
-        <Search />
+        <Search onChange={this.props.onChange} />
         <BurgerButton onClick={this.handleClick}><img src={burgerImg} alt="menu" /></BurgerButton>
         <Nav isOpened={this.state.isOpened}>
           <Submenu title="football">
@@ -47,5 +48,9 @@ class Menu extends Component {
     );
   }
 }
+
+Menu.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Menu;
